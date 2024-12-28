@@ -8,7 +8,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { toast } from 'react-hot-toast';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter, FaGithub, } from 'react-icons/fa';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters long'),
@@ -28,20 +28,22 @@ const Contact = () => {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = async () => {
     // 
     toast.success('Message sent successfully!');
     reset();
   };
 
   return (
-    <section id="contact" className="py-16 text-center">
+    <section id="contact" className="px-4 py-16 lg:px-10 text-center">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
+        className="flex flex-col lg:flex-row items-center justify-center mx-auto"
       >
-        <h2 className="text-4xl font-bold mb-8 text-primary">In the Need of a Develoeper/Designer/Engineer?</h2>
+        <div className="w-full px-4 items-start flex flex-col">
+        <h2 className="text-4xl font-bold mb-8 text-primary">In the Need of a Developer/Engineer?</h2>
         <p className="mb-8 text-text text-lg">
          Feel free to reach out for collaborations, project discussions, or just to say hi! 😊
         </p>
@@ -49,26 +51,26 @@ const Contact = () => {
         {/* Social Links */}
         <div className="flex justify-center space-x-6 mb-12">
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://linkedin.com/in/abhinandan-verma"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-accent text-3xl transition"
+            className="text-primary hover:text-primary/60 text-3xl transition"
           >
             <FaLinkedin />
           </a>
           <a
-            href="https://twitter.com/yourhandle"
+            href="https://twitter.com/awesome_v0"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-accent text-3xl transition"
+            className="text-primary hover:text-primary/60 text-3xl transition"
           >
             <FaTwitter />
           </a>
           <a
-            href="https://github.com/yourhandle"
+            href="https://github.com/awesome-pro"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-accent text-3xl transition"
+            className="text-primary hover:text-primary/60 text-3xl transition"
           >
             <FaGithub />
           </a>
@@ -86,17 +88,18 @@ const Contact = () => {
           </a>
         </div>
 
+        </div>
         {/* Contact Form */}
+        <div className='w-full p-2 '>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="max-w-lg mx-auto bg-secondary p-6 rounded-lg shadow-lg space-y-6"
+          className="w-full p-4 lg:p-6 bg-secondary rounded-lg shadow-lg space-y-6"
         >
           <div>
             <Input
               {...register('name')}
               placeholder="Your Name"
-              className="w-full"
-              error={errors.name?.message}
+              className="w-full border-gray-400"
             />
             {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
           </div>
@@ -105,8 +108,8 @@ const Contact = () => {
               {...register('email')}
               placeholder="Your Email"
               type="email"
-              className="w-full"
-              error={errors.email?.message}
+              className="w-full border-gray-400"
+              
             />
             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
           </div>
@@ -114,8 +117,8 @@ const Contact = () => {
             <Textarea
               {...register('message')}
               placeholder="Your Message"
-              className="w-full"
-              error={errors.message?.message}
+              className="w-full border-gray-400"
+              
               rows={5}
             />
             {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
@@ -124,16 +127,10 @@ const Contact = () => {
             Send Message
           </Button>
         </form>
+        </div>
 
         {/* Additional Contact Info */}
-        <div className="mt-12 space-y-4 text-text">
-          <p className="flex items-center justify-center space-x-2">
-            <FaEnvelope /> <span>youremail@example.com</span>
-          </p>
-          <p className="flex items-center justify-center space-x-2">
-            <FaPhone /> <span>+1 (123) 456-7890</span>
-          </p>
-        </div>
+       
       </motion.div>
     </section>
   );
