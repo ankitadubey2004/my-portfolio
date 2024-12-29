@@ -26,10 +26,10 @@ const StyledButton = ({ children, className, ...props }: any) => (
 
 const Hero = () => {
   const { theme } = useTheme();
-  const [profileImage, setProfileImage] = useState('/light-profile.jpg');
+  const [profileImage, setProfileImage] = useState('/profile.png');
 
   useEffect(() => {
-    setProfileImage(theme === 'dark' ? '/dark-profile.jpg' : '/light-profile.jpg');
+    setProfileImage(theme === 'dark' ? '/dark-profile.png' : '/light-profile.png');
   }, [theme]);
 
   return (
@@ -83,7 +83,7 @@ const Hero = () => {
             </div>
 
             {/* Achievement Stats */}
-            <motion.div
+            {/* <motion.div
               className="grid grid-cols-3 gap-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ const Hero = () => {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </motion.div> */}
 
             {/* CTA Section */}
             <motion.div
