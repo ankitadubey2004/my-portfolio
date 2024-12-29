@@ -99,7 +99,7 @@ const Hero = () => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
                 }
               >
-                Let's Build Together
+                Let&apos;s Build Together
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="outline" size="lg" className="group" asChild>
