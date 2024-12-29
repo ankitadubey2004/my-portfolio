@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
@@ -13,11 +13,27 @@ const achievements = [
   { number: '15k+', label: 'Users Impacted' },
 ];
 
+const StyledButton = ({ children, className, ...props }: any) => (
+  <Button
+    size="lg"
+    className={`relative overflow-hidden transform transition-all duration-300 hover:scale-105 
+    active:scale-95 shadow-lg hover:shadow-xl ${className}`}
+    {...props}
+  >
+    {children}
+  </Button>
+);
+
 const Hero = () => {
   const { theme } = useTheme();
+  const [profileImage, setProfileImage] = useState('/light-profile.jpg');
+
+  useEffect(() => {
+    setProfileImage(theme === 'dark' ? '/dark-profile.jpg' : '/light-profile.jpg');
+  }, [theme]);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden" id="hero">
       {/* Subtle background patterns */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,rgba(59,130,246,0.1),transparent)]" />
 
@@ -87,31 +103,61 @@ const Hero = () => {
 
             {/* CTA Section */}
             <motion.div
-              className="flex flex-wrap gap-4 pt-4"
+              className="flex flex-wrap gap-6 pt-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              <Button
-                size="lg"
-                className="group bg-blue-600 hover:bg-blue-700 text-white px-8"
+              <StyledButton
+                className="group bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 
+          hover:to-blue-900 text-white px-8 py-6"
                 onClick={() =>
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
                 }
               >
-                Let&apos;s Build Together
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="group" asChild>
+                <span className="flex items-center">
+                  Let&apos;s Build Together
+                  <motion.span
+                    className="ml-2"
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.span>
+                </span>
+                <div
+                  className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 
+            transition-opacity duration-300"
+                />
+              </StyledButton>
+
+              <StyledButton
+                variant="outline"
+                className="group border-2 border-blue-600 dark:border-blue-400 hover:bg-blue-50 
+          dark:hover:bg-blue-900/20 px-8 py-6"
+                asChild
+              >
                 <a
                   href="https://calendly.com/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center"
                 >
                   Schedule a Call
-                  <ExternalLink className="ml-2 w-4 h-4 opacity-70 group-hover:opacity-100" />
+                  <motion.span
+                    className="ml-2"
+                    whileHover={{ rotate: 45 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <ExternalLink className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  </motion.span>
+                  <div
+                    className="absolute inset-0 bg-blue-600 dark:bg-blue-400 opacity-0 
+              group-hover:opacity-5 transition-opacity duration-300"
+                  />
                 </a>
-              </Button>
+              </StyledButton>
             </motion.div>
           </motion.div>
 
@@ -126,7 +172,7 @@ const Hero = () => {
               {/* Main Profile Image */}
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src={theme === 'dark' ? '/dark-profile.jpg' : '/light-profile.jpg'}
+                  src={profileImage}
                   alt="Your Name"
                   layout="fill"
                   objectFit="cover"

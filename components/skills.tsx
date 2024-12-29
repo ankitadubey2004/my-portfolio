@@ -114,7 +114,7 @@ const SkillsSection = () => {
     },
   ];
   return (
-    <section className="py-20 relative">
+    <section className="py-20 relative" id="skills">
       {/* Abstract gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(221.2,83.2%,53.3%,0.15)_0%,transparent_50%)]" />

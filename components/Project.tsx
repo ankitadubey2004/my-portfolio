@@ -79,7 +79,7 @@ const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState('all');
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100">
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100" id="projects">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
