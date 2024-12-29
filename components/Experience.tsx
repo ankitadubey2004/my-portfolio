@@ -1,20 +1,21 @@
-"use client"
+'use client';
 
-import React, { useRef, useEffect } from 'react'
-import { motion, useInView, useAnimation } from 'framer-motion'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import React, { useRef, useEffect } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface ExperienceItem {
-  position: string
-  company: string
-  period: string
-  description: string[]
-  skills: string[]
-  images: string[]
-  proofLink?: string
+  position: string;
+  company: string;
+  period: string;
+  description: string[];
+  skills: string[];
+  images: string[];
+  proofLink?: string;
 }
 
 const experiences: ExperienceItem[] = [
@@ -74,104 +75,170 @@ const experiences: ExperienceItem[] = [
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-16">
-      <h2 className="text-3xl font-bold mb-8 text-center">Work Experience</h2>
-      <div className="max-w-4xl mx-auto">
-        {experiences.map((exp, index) => (
-          <TimelineItem key={index} experience={exp} index={index} />
-        ))}
+    <section id="experience" className="py-16 bg-gradient-to-b from-gray-50 to-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-gray-900">Work Experience</h2>
+          <p className="mt-4 text-xl text-gray-600">Specialized in CRM Development and Modern Web Applications</p>
+        </motion.div>
+
+        <div className="max-w-3xl mx-auto">
+          {experiences.map((exp, index) => (
+            <TimelineItem key={index} experience={exp} index={index} />
+          ))}
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({ experience, index }) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const mainControls = useAnimation()
-  const slideControls = useAnimation()
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      mainControls.start("visible")
-      slideControls.start("visible")
+      controls.start('visible');
     }
-  }, [isInView, mainControls, slideControls])
+  }, [isInView, controls]);
 
   return (
-    <div ref={ref} className="mb-8 flex justify-between items-center w-full right-timeline">
-      <div className="order-1 w-5/12"></div>
-      <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
-        <h1 className="mx-auto font-semibold text-lg text-white">{index + 1}</h1>
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 }
+      }}
+      transition={{ duration: 0.5, delay: index * 0.2 }}
+      className="mb-12 relative"
+    >
+      <div className="absolute left-0 top-0 h-full w-0.5 bg-blue-200">
+        <motion.div
+          initial={{ height: 0 }}
+          animate={{ height: '100%' }}
+          transition={{ duration: 1, delay: index * 0.2 }}
+          className="w-full bg-blue-500"
+        />
       </div>
-      <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 1, y: 0 }
-        }}
-        initial="hidden"
-        animate={mainControls}
-        transition={{ duration: 0.5, delay: 0.25 }}
-        className="order-1 bg-gray-400 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4"
-      >
-        <Card>
+
+      <div className="ml-8">
+        <div className="absolute -left-3 top-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+          <span className="text-white text-sm font-semibold">{index + 1}</span>
+        </div>
+
+        <Card className="transform hover:scale-[1.01] transition-all duration-300">
           <CardHeader>
-            <CardTitle>{experience.position}</CardTitle>
-            <CardDescription>{experience.company} | {experience.period}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="list-disc pl-5 mb-4">
-              {experience.description.map((item, i) => (
-                <li key={i} className="mb-2">{item}</li>
-              ))}
-            </ul>
-            <div className="mb-4">
-              <h4 className="font-semibold mb-2">Skills Gained:</h4>
-              <div className="flex flex-wrap gap-2">
-                {experience.skills.map((skill, i) => (
-                  <Badge key={i} variant="secondary">{skill}</Badge>
-                ))}
+            <div className="flex justify-between items-start">
+              <div>
+                <CardTitle className="text-2xl font-bold text-gray-900">{experience.position}</CardTitle>
+                <CardDescription className="text-lg text-gray-600">
+                  {experience.company} | {experience.period}
+                </CardDescription>
               </div>
+              {experience.proofLink && (
+                <Link 
+                  href={experience.proofLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+                >
+                  View Proof
+                </Link>
+              )}
             </div>
-            <Carousel images={experience.images} />
-            {experience.proofLink && (
-              <Link href={experience.proofLink} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                View Proof of Work
-              </Link>
-            )}
+          </CardHeader>
+
+          <CardContent>
+            <ScrollArea className="h-[300px] pr-4">
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-semibold mb-3 text-gray-800">Key Achievements:</h4>
+                  <ul className="space-y-2">
+                    {experience.description.map((item, i) => (
+                      <motion.li
+                        key={i}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.1 }}
+                        className="flex items-start"
+                      >
+                        <span className="mr-2 text-blue-500">•</span>
+                        <span className="text-gray-700">{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold mb-3 text-gray-800">Technologies Used:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {experience.skills.map((skill, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: i * 0.05 }}
+                      >
+                        <Badge 
+                          variant="secondary" 
+                          className="bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors"
+                        >
+                          {skill}
+                        </Badge>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                <Carousel images={experience.images} />
+              </div>
+            </ScrollArea>
           </CardContent>
         </Card>
-      </motion.div>
-    </div>
-  )
-}
+      </div>
+    </motion.div>
+  );
+};
 
 const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = React.useState(0)
+  const [currentIndex, setCurrentIndex] = React.useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [images.length])
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
-    <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
+    <div className="relative w-full h-48 rounded-lg overflow-hidden">
       {images.map((src, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0 }}
           animate={{ opacity: index === currentIndex ? 1 : 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.7 }}
           className="absolute inset-0"
         >
-          <Image src={src} alt={`Work sample ${index + 1}`} layout="fill" objectFit="cover" />
+          <Image
+            src={src}
+            alt={`Work sample ${index + 1}`}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg"
+          />
         </motion.div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Experience
-
+export default Experience;
