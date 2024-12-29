@@ -24,56 +24,119 @@ const experiences: ExperienceItem[] = [
   {
     position: 'Software Engineer',
     company: 'Caresept',
-    period: 'Jan 2023 - Present',
-    location: 'San Francisco, CA',
+    period: 'Sept 2024 - Dec 2024',
+    location: 'Istanbul, Turkey',
     description: [
-      'Developed and maintained CRM solutions for healthcare providers',
-      'Implemented real-time data synchronization between mobile and web platforms',
-      'Optimized database queries, resulting in a 40% improvement in application performance',
+      'Developed and maintained CRM solutions for Europe and Middle East markets',
+      'Implemented Google OAuth from scratch in FastAPI, resulting in a 20% increase in user engagement',
+      'Built a full-fledged Document Editor using Tiptap Editor in Next.js resulting in a 30% increase in user engagement',
+      'Built the bulk CSV upload feature using the csv-parser and Celery worker in FastAPI resulting in a 20% increase in user engagement',
+      'Implemented the Bulk Email Sending feature using SendGrid API in FastAPI resulting in a 20% increase in user engagement',
+      'Implemented Next.js Progressive Web App (PWA) ensuring global installability of application',
+      'Enhanced the SEO of the application resulting in a 10% increase in application traffic',
+      'Implemented the  Event Management and Calendar Management System  in Next.js',
+      'Enhanced user experience with responsive design and accessibility features',
     ],
-    skills: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'GraphQL'],
-    images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
+    skills: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'PostgreSQL',
+      'MUI',
+      'Tiptap',
+      'FastAPI',
+      'Celery',
+      'csv-parser',
+      'MailGun',
+      'Redis',
+      'WeasyPrint',
+    ],
+    images: ['/caresept.png'],
     proofLink: 'https://example.com/caresept-proof',
   },
   {
     position: 'Freelance Software Engineer',
-    company: 'AvenCRM',
-    period: 'Sep 2022 - Dec 2022',
+    company: 'Aven Technologies',
+    period: 'Nov 2024 - Dec 2024',
     location: 'Remote',
     description: [
-      'Designed and implemented custom CRM features for small businesses',
-      'Created data visualization dashboards using D3.js',
-      'Integrated third-party APIs for enhanced functionality',
+      'Designed and implemented custom CRM features for Real Estate market of Dubai, Canada, and the US',
+      'Built the end-to-end CRM solution from scratch using Next.js, Node.js, Express, PostgreSQL, Prisma, rechart.js, and Shadcn UI',
+      'Implemented the Bulk Email Sending feature using Gmail API in Express resulting in a 20% increase in user engagement',
+      'Impemented a highly robust CI-CD pipeline using GitHub Actions and Docker',
+      'Deployed the complete CRM solution on AWS EC2 instance ensuring high availability and scalability',
+      'Enhanced the SEO of the application resulting in a 10% increase in application traffic',
+      'Implemented a robust Authentication and Authorization System using JWT and NextAuth.js',
+      'Implemented the  Event Management and Calendar Management System  in Next.js',
+      'Implemented the Custome Template Editor in Next.js',
+      'Enhanced user experience with responsive design and accessibility features',
     ],
-    skills: ['React', 'Node.js', 'Express', 'MongoDB', 'D3.js'],
+    skills: [
+      'Next.js',
+      'React',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'Shadcn UI',
+      'Prisma',
+      'rechart.js',
+      'Gmail API',
+      'JWT',
+      'NextAuth.js',
+      'Docker',
+      'GitHub Actions',
+      'AWS EC2',
+    ],
     images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
     proofLink: 'https://example.com/avencrm-proof',
   },
   {
     position: 'Open Source Contributor',
     company: 'NextUI',
-    period: 'Jun 2022 - Present',
+    period: 'June 2024 - Aug 2024',
     location: 'Remote',
     description: [
-      'Contributed to the development of reusable UI components',
-      'Improved accessibility features across the component library',
-      'Wrote comprehensive documentation and usage examples',
+      'Achieved a personal offer from the CEO to join NextUI after making good number of significant contributions',
+      'Enhanced Developer Adoption & Product Reach: Delivered 7+  feature enhancements that significantly improved component flexibility and extensibility.',
+      'User Experience Enhancement: Resolved 10+ bugs in essential components like Calendar and Pagination, leading to directly improving the product’s stability and usability.',
+      'Contributed to the development of reusable and extensible UI components',
+      'Contributed to comprehensive documentation and usage examples enhancing the developer experience',
+      'Enhanced Developer Adoption & Product Reach: Delivered 7+  feature enhancements that significantly improved component flexibility and extensibility',
     ],
-    skills: ['React', 'TypeScript', 'Storybook', 'Jest'],
+    skills: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Storybook',
+      'React-Aria',
+      'Jest',
+      'React Testing Library',
+    ],
     images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
     proofLink: 'https://github.com/nextui-org/nextui/pulls?q=is%3Apr+author%3AYourGitHubUsername',
   },
   {
     position: 'Software Development Intern',
-    company: 'SkilledUp',
-    period: 'Jan 2022 - May 2022',
+    company: 'SkilledUp Intelligence Pvt. Ltd.',
+    period: 'March 2024 - June 2024',
     location: 'Bangalore, India',
     description: [
-      'Assisted in the development of a learning management system',
-      'Implemented user authentication and authorization features',
-      'Conducted code reviews and participated in agile development processes',
+      'Assisted in the development of a Learning management system',
+      'Implemented user authentication and authorization features using JWT and NextAuth.js leading to a 20% increase in user engagement',
+      'Enhanced the User Experience with responsive design and accessibility features',
+      'Built a robust Database Query Engine using MongoDB and Express.js',
     ],
-    skills: ['Python', 'Django', 'JavaScript', 'PostgreSQL'],
+    skills: [
+      'Next.js',
+      'TypeScript',
+      'JavaScript',
+      'MongoDB',
+      'Node.js',
+      'Express.js',
+      'JWT',
+      'NextAuth.js',
+      'Docker',
+    ],
     images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
     proofLink: 'https://example.com/skilledup-internship-certificate',
   },
@@ -81,7 +144,10 @@ const experiences: ExperienceItem[] = [
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-16 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <section
+      id="experience"
+      className="py-16 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -100,7 +166,7 @@ const Experience: React.FC = () => {
         <div className="relative max-w-4xl mx-auto">
           {/* Timeline line */}
           <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/0 via-blue-500 to-blue-500/0 hidden lg:block" />
-          
+
           {experiences.map((exp, index) => (
             <TimelineItem key={index} experience={exp} index={index} />
           ))}
@@ -141,7 +207,7 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
         <div className="absolute -inset-2 rounded-full bg-blue-500/20 animate-pulse" />
       </div>
 
-      <Card className="transform hover:scale-[1.02] transition-all duration-300 border dark:border-gray-700">
+      <Card className="transform hover:scale-[1.02] transition-all duration-300 border dark:border-gray-700 lg:max-w-3xl hover:shadow-xl dark:hover:shadow-blue-500/10 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
         <CardHeader>
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div>
@@ -149,15 +215,21 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
                 {experience.position}
               </CardTitle>
               <CardDescription className="text-lg">
-                <span className="font-semibold text-gray-700 dark:text-gray-300">{experience.company}</span>
-                <div className="flex items-center gap-4 mt-2 text-gray-600 dark:text-gray-400">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="w-4 h-4" />
-                    {experience.period}
+                <span className="font-semibold text-gray-700 dark:text-gray-300">
+                  {experience.company}
+                </span>
+                <div className="flex items-center gap-4 mt-2">
+                  <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+                    <Calendar className="w-4 h-4 text-blue-500" />
+                    <span className="text-sm text-gray-700 dark:text-gray-300">
+                      {experience.period}
+                    </span>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <MapPin className="w-4 h-4" />
-                    {experience.location}
+                  <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+                    <MapPin className="w-4 h-4 text-blue-500" />
+                    <span className="text-sm text-gray-700 dark:text-gray-300">
+                      {experience.location}
+                    </span>
                   </div>
                 </div>
               </CardDescription>
@@ -167,7 +239,7 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
                 href={experience.proofLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors group"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 group"
               >
                 View Proof
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -179,25 +251,49 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
         <CardContent>
           <div className="space-y-6">
             <div>
-              <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200">Key Achievements:</h4>
+              <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200">
+                Key Achievements:
+              </h4>
               <ul className="space-y-2">
-                {experience.description.map((item, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex items-start"
-                  >
-                    <span className="mr-2 text-blue-500">•</span>
-                    <span className="text-gray-700 dark:text-gray-300">{item}</span>
-                  </motion.li>
-                ))}
+                {experience.description.map((item, i) => {
+                  // Highlight numbers and percentages
+                  const highlightedText = item.replace(
+                    /(\d+%|\d+\+?)/g,
+                    '<span class="font-semibold text-blue-600 dark:text-blue-400">$1</span>'
+                  );
+
+                  // Highlight technical terms
+                  const technicalTerms = experience.skills.join('|');
+                  const finalText = highlightedText.replace(
+                    new RegExp(`(${technicalTerms})`, 'gi'),
+                    '<span class="font-medium text-emerald-600 dark:text-emerald-400">$1</span>'
+                  );
+
+                  return (
+                    <motion.li
+                      key={i}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="flex items-start group"
+                    >
+                      <span className="mr-2 text-blue-500 transform group-hover:scale-125 transition-transform">
+                        •
+                      </span>
+                      <span
+                        className="text-gray-700 dark:text-gray-300"
+                        dangerouslySetInnerHTML={{ __html: finalText }}
+                      />
+                    </motion.li>
+                  );
+                })}
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200">Technologies Used:</h4>
+              <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200">
+                Technologies Used:
+              </h4>
               <div className="flex flex-wrap gap-2">
                 {experience.skills.map((skill, i) => (
                   <motion.div
@@ -208,7 +304,7 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
                   >
                     <Badge
                       variant="secondary"
-                      className="bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-900/30 dark:text-blue-300 dark:hover:bg-blue-900/50 transition-colors"
+                      className="bg-gradient-to-r from-blue-50 to-blue-100 text-blue-700 hover:from-blue-100 hover:to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 dark:text-blue-300 dark:hover:from-blue-900/50 dark:hover:to-blue-800/50 transition-all duration-300 transform hover:scale-105 cursor-default"
                     >
                       {skill}
                     </Badge>
@@ -217,7 +313,7 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
               </div>
             </div>
 
-            <Carousel images={experience.images} />
+            {/* <Carousel images={experience.images} /> */}
           </div>
         </CardContent>
       </Card>

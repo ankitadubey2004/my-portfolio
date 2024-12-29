@@ -96,7 +96,7 @@ const skillCategories = [
         details: 'Caching, distributed systems',
         projects: 'Cache systems',
         icon: '/skills/redis.svg',
-      }
+      },
     ],
   },
   {
@@ -157,17 +157,17 @@ const SkillCard = ({ skill }: { skill: any }) => {
             <div className="flex justify-between items-start mb-2">
               <h4 className="font-medium">{skill.name}</h4>
               <Badge
-                variant={skill.level === 'Expert' ? 'default' : 'secondary'}
+                // variant={skill.level === 'Expert' ? 'default' : 'secondary'}
                 className={
                   skill.level === 'Expert'
-                    ? 'bg-gradient-to-r from-primary to-primary/80'
+                    ? 'bg-gradient-to-r from-primary to-primary/80 text-white'
                     : ''
                 }
               >
                 {skill.level}
               </Badge>
             </div>
-            
+
             <motion.p
               initial={{ height: 20, opacity: 0.7 }}
               animate={{ height: isHovered ? 'auto' : 20, opacity: isHovered ? 1 : 0.7 }}
@@ -184,11 +184,7 @@ const SkillCard = ({ skill }: { skill: any }) => {
                 {skill.experience}
               </Badge>
               {skill.projects.split(', ').map((project: string) => (
-                <Badge
-                  key={project}
-                  variant="secondary"
-                  className="bg-gray-100 dark:bg-gray-700"
-                >
+                <Badge key={project} variant="secondary" className="bg-gray-100 dark:bg-gray-700">
                   {project}
                 </Badge>
               ))}
@@ -284,7 +280,7 @@ const SkillsSection = () => {
                   <Badge
                     key={domain}
                     variant="default"
-                    className="px-4 py-2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300"
+                    className="px-4 py-2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300 text-white"
                   >
                     {domain}
                   </Badge>

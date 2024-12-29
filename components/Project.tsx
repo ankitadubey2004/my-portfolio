@@ -1,19 +1,11 @@
 'use client';
 
-import React, { useState, useRef, useCallback } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Button } from '@/components/ui/button';
-import { Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -31,242 +23,442 @@ interface Project {
   githubLink: string;
   previewLink?: string;
   highlights?: string[];
+  apiEndpoints?: string[];
 }
 
 const projects: Project[] = [
   {
-    title: 'Enterprise CRM System',
+    title: 'Aven CRM - Real Estate CRM System',
     type: 'fullstack',
     description: [
       'Built a complete CRM solution with role-based access control',
-      'Implemented real-time notifications using WebSockets',
-      'Integrated payment processing with Stripe',
+      'Implemented real-time notifications using WebSockets and Redis',
+      'Integrated payment processing and invoice generation with Stripe',
       'Automated email marketing campaigns',
       'Built analytics dashboard with real-time data visualization',
     ],
-    techStack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Redis', 'AWS', 'Stripe'],
-    images: [
-      { url: '/api/placeholder/800/400', alt: 'CRM Dashboard' },
-      { url: '/api/placeholder/800/400', alt: 'Analytics View' },
+    techStack: [
+      'Next.js',
+      'TypeScript',
+      'React',
+      'PostgreSQL',
+      'Prisma',
+      'Redis',
+      'AWS',
+      'Stripe',
+      'Docker',
+      'CI/CD',
     ],
-    githubLink: 'https://github.com/yourusername/crm-system',
-    previewLink: 'https://crm-demo.com',
-    highlights: ['99.9% Uptime', '50ms Average Response Time', 'Handles 10k+ Daily Active Users'],
+    images: [
+      { url: '/placeholder.svg?height=400&width=800', alt: 'CRM Dashboard' },
+      { url: '/placeholder.svg?height=400&width=800', alt: 'Analytics View' },
+    ],
+    githubLink: 'https://github.com/example/avencrm',
+    previewLink: 'https://avencrm.com',
+    highlights: ['99.9% Uptime', '50ms Average Response Time', '10k+ Daily Active Users'],
   },
   {
-    title: 'Enterprise CRM System',
-    type: 'fullstack',
-    description: [
-      'Built a complete CRM solution with role-based access control',
-      'Implemented real-time notifications using WebSockets',
-      'Integrated payment processing with Stripe',
-      'Automated email marketing campaigns',
-      'Built analytics dashboard with real-time data visualization',
-    ],
-    techStack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Redis', 'AWS', 'Stripe'],
-    images: [
-      { url: '/api/placeholder/800/400', alt: 'CRM Dashboard' },
-      { url: '/api/placeholder/800/400', alt: 'Analytics View' },
-    ],
-    githubLink: 'https://github.com/yourusername/crm-system',
-    previewLink: 'https://crm-demo.com',
-    highlights: ['99.9% Uptime', '50ms Average Response Time', 'Handles 10k+ Daily Active Users'],
+    title: 'Kobil - The SuperAPP platform',
+    type: 'landing',
+    description: [],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'NextUI'],
+    images: [{ url: '/kobil.png', alt: 'Kobil SuperAPP Landing Page' }],
+    githubLink: 'https://github.com/example/kobil-landing',
+    previewLink: 'https://kobil.com',
   },
-  // Add more projects following the same structure
+  {
+    title: 'Brick - The Real Estate Property ',
+    type: 'landing',
+    description: [],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'CuiCui UI'],
+    images: [{ url: '/brick-2.png', alt: 'Brick Landing Page' }],
+    githubLink: 'https://github.com/example/brick-landing',
+    previewLink: 'https://brick.com',
+  },
+  {
+    title: 'Bistro - The Restaurant',
+    type: 'landing',
+    description: [],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    images: [{ url: '/projects/bistro-1.png', alt: 'Bistro Landing Page' }],
+    githubLink: 'https://github.com/example/bistro-landing',
+    previewLink: 'https://bistro.com',
+  },
+  {
+    title: 'Chat Origin - The Chat App',
+    type: 'landing',
+    description: [],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    images: [{ url: '/projects/chat-origin.png', alt: 'Chat Origin Landing Page' }],
+    githubLink: 'https://github.com/example/chat-origin-landing',
+    previewLink: 'https://chatorigin.com',
+  },
+  {
+    title: 'Navigator - Terrain Navigation',
+    type: 'landing',
+    description: [],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    images: [{ url: '/projects/navigator-2.png', alt: 'Navigator Landing Page' }],
+    githubLink: 'https://github.com/example/navigator-landing',
+    previewLink: 'https://navigator.com',
+  },
+  {
+    title: 'SaaSy - The SaaS Platform',
+    type: 'landing',
+    description: [],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    images: [{ url: '/projects/sassy.png', alt: 'SaaSy Landing Page' }],
+    githubLink: 'https://github.com/example/saasy-landing',
+    previewLink: 'https://saasy.com',
+  },
+  {
+    title: 'Travelog - The Travel Blog',
+    type: 'landing',
+    description: [],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    images: [{ url: '/projects/travelog.png', alt: 'Travelog Landing Page' }],
+    githubLink: 'https://github.com/example/travelog-landing',
+    previewLink: 'https://travelog.com',
+  },
+  {
+    title: 'CourseSpace - The Online Learning Platform',
+    type: 'landing',
+    description: [],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    images: [{ url: '/projects/coursespace-2.png', alt: 'CourseSpace Landing Page' }],
+    githubLink: 'https://github.com/example/coursespace-landing',
+    previewLink: 'https://coursespace.com',
+  },
+  {
+    title: 'Caresept - The CRM Provider',
+    type: 'landing',
+    description: [],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    images: [{ url: '/projects/caresept.png', alt: 'Caresept Landing Page' }],
+    githubLink: 'https://github.com/example/caresept-landing',
+    previewLink: 'https://caresept.com',
+  },
+  {
+    title: 'E-commerce API',
+    type: 'backend',
+    description: [
+      'Developed a scalable e-commerce API with Node.js and Express',
+      'Implemented user authentication and authorization with JWT',
+      'Created RESTful endpoints for product management and order processing',
+      'Integrated with Stripe for secure payment processing',
+    ],
+    techStack: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Stripe API'],
+    images: [{ url: '/placeholder.svg?height=400&width=800', alt: 'E-commerce API Architecture' }],
+    githubLink: 'https://github.com/example/ecommerce-api',
+    apiEndpoints: [
+      'GET /api/products',
+      'POST /api/orders',
+      'PUT /api/users/:id',
+      'DELETE /api/products/:id',
+    ],
+    highlights: ['5000 req/s', '99.99% Uptime', 'OAuth 2.0 Support'],
+  },
 ];
 
 const ProjectsSection = () => {
-  const [activeTab, setActiveTab] = useState('all');
+  const [filter, setFilter] = useState<'all' | 'fullstack' | 'landing' | 'backend'>('all');
+
+  const filteredProjects = projects.filter(project => filter === 'all' || project.type === filter);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100" id="projects">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-      >
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-          <p className="text-xl text-gray-600">
+    <section
+      className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
+      id="projects"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            Featured Projects
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-400">
             Showcasing 30+ production-ready applications and solutions
           </p>
+        </motion.div>
+
+        {/* Animated Filter Buttons */}
+        <div className="flex justify-center gap-4 mb-12">
+          {['all', 'fullstack', 'landing', 'backend'].map(type => (
+            <motion.button
+              key={type}
+              onClick={() => setFilter(type as typeof filter)}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all relative ${
+                filter === type
+                  ? 'text-white'
+                  : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
+              } ${filter === type ? 'bg-gradient-to-r from-blue-600 to-blue-400' : ''}`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {type.charAt(0).toUpperCase() + type.slice(1)}
+            </motion.button>
+          ))}
         </div>
 
-        <Tabs defaultValue="all" className="w-full" onValueChange={setActiveTab}>
-          <div className="flex justify-center mb-12">
-            <TabsList className="bg-gray-100/50 backdrop-blur-sm">
-              <TabsTrigger value="all">All Projects</TabsTrigger>
-              <TabsTrigger value="landing">Landing Pages</TabsTrigger>
-              <TabsTrigger value="fullstack">Full Stack</TabsTrigger>
-              <TabsTrigger value="backend">Backend</TabsTrigger>
-            </TabsList>
-          </div>
-
-          <TabsContent value="all" className="space-y-12">
-            <ProjectGrid projects={projects} />
-          </TabsContent>
-          {/* Add similar TabsContent for other categories */}
-        </Tabs>
-      </motion.div>
+        {/* Projects Grid */}
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.title}
+                layout
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
+                {project.type === 'fullstack' && <FullStackCard project={project} />}
+                {project.type === 'landing' && <LandingPageCard project={project} />}
+                {project.type === 'backend' && <BackendCard project={project} />}
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
     </section>
   );
 };
 
-const ProjectGrid: React.FC<{ projects: Project[] }> = ({ projects }) => {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {projects.map((project, index) => (
-        <ProjectCard key={index} project={project} index={index} />
-      ))}
-    </div>
-  );
-};
-
-const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+const FullStackCard: React.FC<{ project: Project }> = ({ project }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const nextImage = useCallback(() => {
-    setCurrentImageIndex(prev => (prev + 1) % project.images.length);
-  }, [project.images.length]);
-
-  const prevImage = useCallback(() => {
+  const nextImage = () => setCurrentImageIndex(prev => (prev + 1) % project.images.length);
+  const prevImage = () =>
     setCurrentImageIndex(prev => (prev - 1 + project.images.length) % project.images.length);
-  }, [project.images.length]);
-
-  // Auto-advance carousel
-  React.useEffect(() => {
-    const timer = setInterval(nextImage, 5000);
-    return () => clearInterval(timer);
-  }, [nextImage]);
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
-    >
-      <Card className="overflow-hidden group">
-        <div className="relative h-64 overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentImageIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={project.images[currentImageIndex].url}
-                alt={project.images[currentImageIndex].alt}
-                layout="fill"
-                objectFit="cover"
-                className="group-hover:scale-105 transition-transform duration-500"
+    <Card className="overflow-hidden group transform transition-all duration-300 hover:shadow-xl dark:bg-gray-800">
+      <div className="relative h-64">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentImageIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={project.images[currentImageIndex].url}
+              alt={project.images[currentImageIndex].alt}
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Navigation */}
+        <div className="absolute inset-x-0 bottom-0 p-6">
+          <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
+          <div className="flex gap-2">
+            {project.images.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentImageIndex(idx)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  idx === currentImageIndex ? 'bg-white w-4' : 'bg-white/50'
+                }`}
               />
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation buttons */}
-          <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={prevImage}
-              className="bg-white/20 backdrop-blur-sm hover:bg-white/30"
-            >
-              <ChevronLeft className="h-6 w-6 text-white" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={nextImage}
-              className="bg-white/20 backdrop-blur-sm hover:bg-white/30"
-            >
-              <ChevronRight className="h-6 w-6 text-white" />
-            </Button>
-          </div>
-
-          {/* Project title overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-            <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+            ))}
           </div>
         </div>
 
-        <CardContent className="p-6">
-          <div className="space-y-4">
-            {/* Tech Stack */}
-            <div className="flex flex-wrap gap-2">
-              {project.techStack.map((tech, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800">
-                    {tech}
-                  </Badge>
-                </motion.div>
-              ))}
-            </div>
+        {/* Carousel Navigation Buttons */}
+        <button
+          onClick={prevImage}
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+        <button
+          onClick={nextImage}
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
+      </div>
 
-            {/* Description */}
-            <ul className="space-y-2">
-              {project.description.map((item, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex items-start text-gray-600"
-                >
-                  <span className="mr-2 text-blue-500">•</span>
-                  {item}
-                </motion.li>
-              ))}
-            </ul>
-
-            {/* Highlights */}
-            {project.highlights && (
-              <div className="mt-4 grid grid-cols-3 gap-4">
-                {project.highlights.map((highlight, i) => (
-                  <div key={i} className="bg-gray-50 p-3 rounded-lg text-center">
-                    <p className="text-sm text-gray-600">{highlight}</p>
-                  </div>
-                ))}
-              </div>
-            )}
+      <CardContent className="p-6">
+        <div className="space-y-4">
+          <div className="flex flex-wrap gap-2">
+            {project.techStack.map((tech, i) => (
+              <Badge
+                key={i}
+                variant="secondary"
+                className="bg-gradient-to-r from-blue-50 to-blue-100 text-blue-700 dark:from-blue-900 dark:to-blue-800 dark:text-blue-200"
+              >
+                {tech}
+              </Badge>
+            ))}
           </div>
-        </CardContent>
+          <ul className="space-y-2">
+            {project.description.map((item, i) => (
+              <li key={i} className="flex items-start text-gray-600 dark:text-gray-300">
+                <span className="mr-2 text-blue-500">•</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </CardContent>
 
-        <CardFooter className="flex justify-between p-6 bg-gray-50">
+      <CardFooter className="flex justify-between p-6 bg-gray-50 dark:bg-gray-700">
+        {project.githubLink && (
           <Link
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 text-gray-600 hover:text-gray-900"
+            className="flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
           >
-            <Github className="h-5 w-5" />
+            <FaGithub className="h-5 w-5" />
             <span>Source Code</span>
           </Link>
+        )}
+        {project.previewLink && (
+          <Link
+            href={project.previewLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+          >
+            <ExternalLink className="h-5 w-5" />
+            <span>Live Preview</span>
+          </Link>
+        )}
+      </CardFooter>
+    </Card>
+  );
+};
+
+const LandingPageCard: React.FC<{ project: Project }> = ({ project }) => {
+  return (
+    <div className="group relative overflow-hidden rounded-xl">
+      <div className="aspect-[16/9] w-full overflow-hidden">
+        <Image
+          src={project.images[0].url}
+          alt={project.title}
+          layout="fill"
+          objectFit="cover"
+          className="transform transition-transform duration-500 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+
+      <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.techStack.map((tech, i) => (
+            <Badge key={i} variant="secondary" className="bg-white/20 text-white backdrop-blur-sm">
+              {tech}
+            </Badge>
+          ))}
+        </div>
+        <div className="flex gap-4">
+          {project.githubLink && (
+            <Link
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-300 transition-colors"
+            >
+              <FaGithub className="h-6 w-6" />
+            </Link>
+          )}
           {project.previewLink && (
             <Link
               href={project.previewLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-blue-600 hover:text-blue-800"
+              className="text-white hover:text-blue-300 transition-colors"
             >
-              <ExternalLink className="h-5 w-5" />
-              <span>Live Preview</span>
+              <ExternalLink className="h-6 w-6" />
             </Link>
           )}
-        </CardFooter>
-      </Card>
-    </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const BackendCard: React.FC<{ project: Project }> = ({ project }) => {
+  return (
+    <Card className="overflow-hidden border-2 border-gray-200 dark:border-gray-700">
+      <div className="p-6 space-y-6">
+        <div className="flex items-start justify-between">
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{project.title}</h3>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {project.techStack.map((tech, i) => (
+                <Badge
+                  key={i}
+                  variant="secondary"
+                  className="bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
+                >
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div className="flex gap-3">
+            {project.githubLink && (
+              <Link
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
+              >
+                <FaGithub className="h-5 w-5" />
+              </Link>
+            )}
+            {project.previewLink && (
+              <Link
+                href={project.previewLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors"
+              >
+                <ExternalLink className="h-5 w-5" />
+              </Link>
+            )}
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
+            <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
+              API Endpoints
+            </h4>
+            <ul className="space-y-2 font-mono text-sm">
+              {project.apiEndpoints?.map((endpoint, i) => (
+                <li key={i} className="text-gray-700 dark:text-gray-300">
+                  {endpoint}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {project.highlights && (
+          <div className="grid grid-cols-3 gap-4">
+            {project.highlights.map((highlight, i) => (
+              <div key={i} className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg text-center">
+                <p className="text-sm text-blue-700 dark:text-blue-300">{highlight}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </Card>
   );
 };
 
