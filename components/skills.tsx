@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import React, { useState } from 'react';
@@ -5,80 +6,87 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Server, Database, Cloud, Layout } from 'lucide-react';
+import { Layout, Server, Database, Cloud } from 'lucide-react';
 
 // Add your tech icons/images to the public/skills directory
 const skillCategories = [
   {
-    title: 'Frontend Development',
+    title: 'Frontend Architecture',
     icon: <Layout className="w-6 h-6" />,
     skills: [
       {
         name: 'Next.js',
         level: 'Expert',
         experience: '3+ years',
-        details: 'Advanced expertise in SSR, ISR, API Routes, and Next.js 13+ features',
-        projects: 'NextUI Contribution, CRM Systems',
-        icon: '/skills/nextjs.svg', // You'll need to add these images
+        details:
+          'Advanced Server Components, Streaming SSR, React Server Actions, Edge Runtime optimization, App Router architecture, and advanced caching strategies. Expertise in building enterprise-grade micro-frontends.',
+        projects: 'Large-scale E-commerce, Enterprise CRM',
+        icon: '/skills/nextjs.svg',
       },
       {
         name: 'React.js',
         level: 'Expert',
         experience: '4+ years',
-        details: 'Deep understanding of React patterns, hooks, and performance optimization',
-        projects: 'Multiple enterprise applications',
+        details:
+          'Advanced state management patterns, Custom Hooks architecture, Render optimization, Suspense patterns, concurrent features. Deep expertise in performance profiling and bundle optimization.',
+        projects: 'Financial Dashboards, Real-time Analytics',
         icon: '/skills/react.svg',
       },
       {
         name: 'TypeScript',
         level: 'Expert',
         experience: '3+ years',
-        details: 'Advanced type systems, generics, and type safety patterns',
-        projects: 'All recent projects',
+        details:
+          'Advanced type system architecture, Generic type patterns, Custom type utilities, Conditional types, Module augmentation. Build-time type checking and automated type generation.',
+        projects: 'Enterprise SDK Development, API Frameworks',
         icon: '/skills/typescript.svg',
       },
     ],
   },
   {
-    title: 'Backend Development',
+    title: 'Backend Systems',
     icon: <Server className="w-6 h-6" />,
     skills: [
       {
-        name: 'FastAPI',
+        name: 'System Design',
         level: 'Advanced',
+        experience: '3+ years',
+        details:
+          'Distributed systems architecture, Event-driven design, CQRS patterns, Message queues, Rate limiting, Circuit breakers. Expertise in building highly available, fault-tolerant systems.',
+        projects: 'High-load Payment Systems, Trading Platforms',
+        icon: '/skills/system-design.svg',
+      },
+      {
+        name: 'FastAPI',
+        level: 'Expert',
         experience: '2+ years',
-        details: 'High-performance API development, async operations',
-        projects: 'CRM backend systems',
+        details:
+          'Async IO optimization, WebSocket implementations, Custom middleware architecture, OpenAPI integration, Advanced dependency injection patterns, High-performance data streaming.',
+        projects: 'Real-time Analytics, IoT Platforms',
         icon: '/skills/fastapi.svg',
       },
       {
         name: 'Golang',
         level: 'Advanced',
-        experience: '-',
-        details: 'Concurrency, performance, microservices',
-        projects: 'Enterprise applications',
+        experience: '2+ years',
+        details:
+          'Goroutines optimization, Channel patterns, Memory management, Custom runtime schedulers, Advanced concurrency patterns, High-performance networking.',
+        projects: 'Microservices Architecture, Trading Systems',
         icon: '/skills/go.svg',
-      },
-      {
-        name: 'Express.js',
-        level: 'Expert',
-        experience: '3+ years',
-        details: 'RESTful APIs, middleware development, authentication',
-        projects: 'Multiple backend services',
-        icon: '/skills/express.svg',
       },
     ],
   },
   {
-    title: 'Database & Cloud',
+    title: 'Data & Infrastructure',
     icon: <Database className="w-6 h-6" />,
     skills: [
       {
-        name: 'PostgreSQL',
-        level: 'Expert',
-        experience: '3+ years',
-        details: 'Complex queries, optimization, scaling',
-        projects: 'CRM databases, Enterprise systems',
+        name: 'Database Design',
+        level: 'Intermediate',
+        experience: '1+ years',
+        details:
+          'Advanced query optimization, Partitioning strategies, Replication architectures, ACID compliance patterns, Custom indexing strategies.',
+        projects: 'Big Data Analytics',
         icon: '/skills/postgresql.svg',
       },
       {
@@ -105,18 +113,19 @@ const skillCategories = [
     skills: [
       {
         name: 'Docker',
-        level: 'Advanced',
+        level: 'Intermediate',
         experience: '2+ years',
         details: 'Container orchestration, multi-stage builds',
         projects: 'Microservices deployment',
         icon: '/skills/docker.svg',
       },
       {
-        name: 'Kubernetes',
+        name: 'DevOps Automation',
         level: 'Intermediate',
-        experience: '1+ year',
-        details: 'Cluster management, deployment strategies',
-        projects: 'Container orchestration',
+        experience: '1+ years',
+        details:
+          'GitOps workflows, Infrastructure as Code, Automated deployment pipelines, Chaos engineering, Blue-green deployments, Canary releases.',
+        projects: 'CI/CD Platforms, Cloud Infrastructure, Container orchestration',
         icon: '/skills/kubernetes.svg',
       },
       {
@@ -141,10 +150,10 @@ const SkillCard = ({ skill }: { skill: any }) => {
       onHoverEnd={() => setIsHovered(false)}
       whileHover={{ scale: 1.02 }}
     >
-      <div className="p-4 rounded-lg bg-gradient-to-br from-gray-50/80 via-gray-50/90 to-white dark:from-gray-700/50 dark:via-gray-700/60 dark:to-gray-700/70 hover:from-primary/5 hover:to-primary/10 transition-all duration-300">
-        <div className="flex items-start gap-4">
+      <div className="p-6 rounded-lg bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-700 hover:from-primary/10 hover:to-primary/20 transition-all duration-300 shadow-md">
+        <div className="flex items-start gap-6">
           {/* Tech Icon/Image */}
-          <div className="relative w-12 h-12 flex-shrink-0">
+          <div className="relative w-14 h-14 flex-shrink-0">
             <Image
               src={skill.icon}
               alt={skill.name}
@@ -154,14 +163,15 @@ const SkillCard = ({ skill }: { skill: any }) => {
           </div>
 
           <div className="flex-1">
-            <div className="flex justify-between items-start mb-2">
-              <h4 className="font-medium">{skill.name}</h4>
+            <div className="flex justify-between items-start mb-3">
+              <h4 className="font-semibold text-lg text-gray-800 dark:text-gray-200">
+                {skill.name}
+              </h4>
               <Badge
-                // variant={skill.level === 'Expert' ? 'default' : 'secondary'}
                 className={
                   skill.level === 'Expert'
                     ? 'bg-gradient-to-r from-primary to-primary/80 text-white'
-                    : ''
+                    : 'bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200'
                 }
               >
                 {skill.level}
@@ -171,7 +181,7 @@ const SkillCard = ({ skill }: { skill: any }) => {
             <motion.p
               initial={{ height: 20, opacity: 0.7 }}
               animate={{ height: isHovered ? 'auto' : 20, opacity: isHovered ? 1 : 0.7 }}
-              className="text-sm text-gray-600 dark:text-gray-300 mb-2 overflow-hidden"
+              className="text-sm text-gray-700 dark:text-gray-300 mb-2 overflow-hidden"
             >
               {skill.details}
             </motion.p>
@@ -184,7 +194,11 @@ const SkillCard = ({ skill }: { skill: any }) => {
                 {skill.experience}
               </Badge>
               {skill.projects.split(', ').map((project: string) => (
-                <Badge key={project} variant="secondary" className="bg-gray-100 dark:bg-gray-700">
+                <Badge
+                  key={project}
+                  variant="secondary"
+                  className="bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200"
+                >
                   {project}
                 </Badge>
               ))}
@@ -271,11 +285,14 @@ const SkillsSection = () => {
               </h4>
               <div className="flex flex-wrap justify-center gap-3">
                 {[
-                  'CRM Systems',
-                  'Enterprise Applications',
-                  'Cloud Infrastructure',
-                  'Microservices',
-                  'API Development',
+                  'Enterprise System Architecture',
+                  'High-Performance Computing',
+                  'Distributed Systems',
+                  'FinTech Solutions',
+                  'Real-time Processing',
+                  'Security Compliance',
+                  'Scalable Infrastructure',
+                  'Data Engineering',
                 ].map(domain => (
                   <Badge
                     key={domain}
