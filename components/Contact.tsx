@@ -39,11 +39,11 @@ const Contact = () => {
     <section className="relative py-24 overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-600" />
-      
+
       {/* Decorative Elements */}
       <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:60px_60px]" />
       {/* <div className="absolute h-full w-full bg-slate-900/[0.7]" /> */}
-      
+
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,18 +72,15 @@ const Contact = () => {
                   <Calendar className="h-12 w-12 mb-4 text-blue-400" />
                   <h3 className="text-2xl font-semibold mb-2">Schedule a 1:1 Meeting</h3>
                   <p className="text-slate-300">
-                    Let&apos;s discuss your project requirements and explore how I can add value to your team.
+                    Let&apos;s discuss your project requirements and explore how I can add value to
+                    your team.
                   </p>
                 </div>
-                <Button 
+                <Button
                   asChild
                   className="w-full bg-white text-blue-900 hover:bg-blue-50 transition-colors"
                 >
-                  <a
-                    href="https://cal.com/yourusername"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://cal.com/yourusername" target="_blank" rel="noopener noreferrer">
                     Book a 15-min Call
                   </a>
                 </Button>

@@ -20,58 +20,58 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    position: "Software Engineer",
-    company: "Caresept",
-    period: "Jan 2023 - Present",
+    position: 'Software Engineer',
+    company: 'Caresept',
+    period: 'Jan 2023 - Present',
     description: [
-      "Developed and maintained CRM solutions for healthcare providers",
-      "Implemented real-time data synchronization between mobile and web platforms",
-      "Optimized database queries, resulting in a 40% improvement in application performance"
+      'Developed and maintained CRM solutions for healthcare providers',
+      'Implemented real-time data synchronization between mobile and web platforms',
+      'Optimized database queries, resulting in a 40% improvement in application performance',
     ],
-    skills: ["Next.js", "React", "TypeScript", "PostgreSQL", "GraphQL"],
-    images: ["/placeholder.svg?height=300&width=400", "/placeholder.svg?height=300&width=400"],
-    proofLink: "https://example.com/caresept-proof"
+    skills: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'GraphQL'],
+    images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
+    proofLink: 'https://example.com/caresept-proof',
   },
   {
-    position: "Freelance Software Engineer",
-    company: "AvenCRM",
-    period: "Sep 2022 - Dec 2022",
+    position: 'Freelance Software Engineer',
+    company: 'AvenCRM',
+    period: 'Sep 2022 - Dec 2022',
     description: [
-      "Designed and implemented custom CRM features for small businesses",
-      "Created data visualization dashboards using D3.js",
-      "Integrated third-party APIs for enhanced functionality"
+      'Designed and implemented custom CRM features for small businesses',
+      'Created data visualization dashboards using D3.js',
+      'Integrated third-party APIs for enhanced functionality',
     ],
-    skills: ["React", "Node.js", "Express", "MongoDB", "D3.js"],
-    images: ["/placeholder.svg?height=300&width=400", "/placeholder.svg?height=300&width=400"],
-    proofLink: "https://example.com/avencrm-proof"
+    skills: ['React', 'Node.js', 'Express', 'MongoDB', 'D3.js'],
+    images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
+    proofLink: 'https://example.com/avencrm-proof',
   },
   {
-    position: "Open Source Contributor",
-    company: "NextUI",
-    period: "Jun 2022 - Present",
+    position: 'Open Source Contributor',
+    company: 'NextUI',
+    period: 'Jun 2022 - Present',
     description: [
-      "Contributed to the development of reusable UI components",
-      "Improved accessibility features across the component library",
-      "Wrote comprehensive documentation and usage examples"
+      'Contributed to the development of reusable UI components',
+      'Improved accessibility features across the component library',
+      'Wrote comprehensive documentation and usage examples',
     ],
-    skills: ["React", "TypeScript", "Storybook", "Jest"],
-    images: ["/placeholder.svg?height=300&width=400", "/placeholder.svg?height=300&width=400"],
-    proofLink: "https://github.com/nextui-org/nextui/pulls?q=is%3Apr+author%3AYourGitHubUsername"
+    skills: ['React', 'TypeScript', 'Storybook', 'Jest'],
+    images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
+    proofLink: 'https://github.com/nextui-org/nextui/pulls?q=is%3Apr+author%3AYourGitHubUsername',
   },
   {
-    position: "Software Development Intern",
-    company: "SkilledUp",
-    period: "Jan 2022 - May 2022",
+    position: 'Software Development Intern',
+    company: 'SkilledUp',
+    period: 'Jan 2022 - May 2022',
     description: [
-      "Assisted in the development of a learning management system",
-      "Implemented user authentication and authorization features",
-      "Conducted code reviews and participated in agile development processes"
+      'Assisted in the development of a learning management system',
+      'Implemented user authentication and authorization features',
+      'Conducted code reviews and participated in agile development processes',
     ],
-    skills: ["Python", "Django", "JavaScript", "PostgreSQL"],
-    images: ["/placeholder.svg?height=300&width=400", "/placeholder.svg?height=300&width=400"],
-    proofLink: "https://example.com/skilledup-internship-certificate"
-  }
-]
+    skills: ['Python', 'Django', 'JavaScript', 'PostgreSQL'],
+    images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
+    proofLink: 'https://example.com/skilledup-internship-certificate',
+  },
+];
 
 const Experience: React.FC = () => {
   return (
@@ -84,7 +84,9 @@ const Experience: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900">Work Experience</h2>
-          <p className="mt-4 text-xl text-gray-600">Specialized in CRM Development and Modern Web Applications</p>
+          <p className="mt-4 text-xl text-gray-600">
+            Specialized in CRM Development and Modern Web Applications
+          </p>
         </motion.div>
 
         <div className="max-w-3xl mx-auto">
@@ -97,7 +99,10 @@ const Experience: React.FC = () => {
   );
 };
 
-const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({ experience, index }) => {
+const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
+  experience,
+  index,
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const controls = useAnimation();
@@ -115,7 +120,7 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
       animate={controls}
       variants={{
         hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0 }
+        visible: { opacity: 1, y: 0 },
       }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
       className="mb-12 relative"
@@ -138,15 +143,17 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
           <CardHeader>
             <div className="flex justify-between items-start">
               <div>
-                <CardTitle className="text-2xl font-bold text-gray-900">{experience.position}</CardTitle>
+                <CardTitle className="text-2xl font-bold text-gray-900">
+                  {experience.position}
+                </CardTitle>
                 <CardDescription className="text-lg text-gray-600">
                   {experience.company} | {experience.period}
                 </CardDescription>
               </div>
               {experience.proofLink && (
-                <Link 
-                  href={experience.proofLink} 
-                  target="_blank" 
+                <Link
+                  href={experience.proofLink}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
                 >
@@ -187,8 +194,8 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: i * 0.05 }}
                       >
-                        <Badge 
-                          variant="secondary" 
+                        <Badge
+                          variant="secondary"
                           className="bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors"
                         >
                           {skill}
@@ -213,7 +220,7 @@ const Carousel: React.FC<{ images: string[] }> = ({ images }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
     }, 4000);
     return () => clearInterval(interval);
   }, [images.length]);

@@ -2,38 +2,38 @@ import React from 'react';
 import { Github, Linkedin, Twitter, Mail, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 
 const Footer = () => {
   const socialLinks = [
     {
-      name: "GitHub",
-      href: "https://github.com/yourusername",
+      name: 'GitHub',
+      href: 'https://github.com/yourusername',
       icon: <Github className="w-5 h-5" />,
     },
     {
-      name: "LinkedIn",
-      href: "https://linkedin.com/in/yourusername",
+      name: 'LinkedIn',
+      href: 'https://linkedin.com/in/yourusername',
       icon: <Linkedin className="w-5 h-5" />,
     },
     {
-      name: "Twitter",
-      href: "https://twitter.com/yourusername",
+      name: 'Twitter',
+      href: 'https://twitter.com/yourusername',
       icon: <Twitter className="w-5 h-5" />,
     },
     {
-      name: "Email",
-      href: "mailto:your.email@example.com",
+      name: 'Email',
+      href: 'mailto:your.email@example.com',
       icon: <Mail className="w-5 h-5" />,
     },
   ];
 
   const quickLinks = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
-    { name: "Contact", href: "#contact" },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -48,13 +48,7 @@ const Footer = () => {
             {/* Logo and description */}
             <div className="flex flex-col space-y-4">
               <Link href="/">
-                <Image 
-                  src="/logo.png" 
-                  alt="Logo" 
-                  width={220} 
-                  height={50} 
-                  className="dark:invert"
-                />
+                <Image src="/logo.png" alt="Logo" width={220} height={50} className="dark:invert" />
               </Link>
               <p className="text-sm text-gray-600 dark:text-gray-400 max-w-sm">
                 From Pro to Ultra Pro.
@@ -85,7 +79,7 @@ const Footer = () => {
                 Connect
               </h3>
               <div className="flex flex-wrap gap-2">
-                {socialLinks.map((social) => (
+                {socialLinks.map(social => (
                   <Button
                     key={social.name}
                     variant="ghost"

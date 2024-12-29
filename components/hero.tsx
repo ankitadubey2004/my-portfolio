@@ -20,7 +20,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Subtle background patterns */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,rgba(59,130,246,0.1),transparent)]" />
-      
+
       <div className="container mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
@@ -31,7 +31,7 @@ const Hero = () => {
             className="space-y-8"
           >
             {/* Leadership Statement */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -44,7 +44,7 @@ const Hero = () => {
 
             {/* Main Headline */}
             <div className="space-y-4">
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-6xl font-bold tracking-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -55,8 +55,8 @@ const Hero = () => {
                   One Solution at a Time
                 </span>
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 className="text-md text-gray-600 dark:text-gray-300"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -67,7 +67,7 @@ const Hero = () => {
             </div>
 
             {/* Achievement Stats */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-3 gap-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -86,27 +86,28 @@ const Hero = () => {
             </motion.div>
 
             {/* CTA Section */}
-            <motion.div 
+            <motion.div
               className="flex flex-wrap gap-4 pt-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              <Button 
+              <Button
                 size="lg"
                 className="group bg-blue-600 hover:bg-blue-700 text-white px-8"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() =>
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+                }
               >
                 Let's Build Together
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="group"
-                asChild
-              >
-                <a href="https://calendly.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="group" asChild>
+                <a
+                  href="https://calendly.com/yourusername"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Schedule a Call
                   <ExternalLink className="ml-2 w-4 h-4 opacity-70 group-hover:opacity-100" />
                 </a>

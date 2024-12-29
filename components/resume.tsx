@@ -2,23 +2,18 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Download, 
-  ZoomIn, 
-  ZoomOut, 
-  ChevronLeft, 
+import {
+  Download,
+  ZoomIn,
+  ZoomOut,
+  ChevronLeft,
   ChevronRight,
   FileText,
-  Loader2
+  Loader2,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const ResumeViewer = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -166,7 +161,9 @@ const ResumeViewer = () => {
 
           {/* PDF Viewer */}
           <Card className="overflow-hidden shadow-xl bg-white dark:bg-gray-800">
-            <div className="relative min-h-[842px]"> {/* A4 height ratio */}
+            <div className="relative min-h-[842px]">
+              {' '}
+              {/* A4 height ratio */}
               {isLoading && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-50 dark:bg-gray-900">
                   <Loader2 className="h-8 w-8 animate-spin text-primary" />

@@ -2,7 +2,14 @@
 
 import React, { useState, useRef, useCallback } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
@@ -28,60 +35,52 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Enterprise CRM System",
-    type: "fullstack",
+    title: 'Enterprise CRM System',
+    type: 'fullstack',
     description: [
-      "Built a complete CRM solution with role-based access control",
-      "Implemented real-time notifications using WebSockets",
-      "Integrated payment processing with Stripe",
-      "Automated email marketing campaigns",
-      "Built analytics dashboard with real-time data visualization"
+      'Built a complete CRM solution with role-based access control',
+      'Implemented real-time notifications using WebSockets',
+      'Integrated payment processing with Stripe',
+      'Automated email marketing campaigns',
+      'Built analytics dashboard with real-time data visualization',
     ],
-    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Redis", "AWS", "Stripe"],
+    techStack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Redis', 'AWS', 'Stripe'],
     images: [
-      { url: "/api/placeholder/800/400", alt: "CRM Dashboard" },
-      { url: "/api/placeholder/800/400", alt: "Analytics View" }
+      { url: '/api/placeholder/800/400', alt: 'CRM Dashboard' },
+      { url: '/api/placeholder/800/400', alt: 'Analytics View' },
     ],
-    githubLink: "https://github.com/yourusername/crm-system",
-    previewLink: "https://crm-demo.com",
-    highlights: [
-      "99.9% Uptime",
-      "50ms Average Response Time",
-      "Handles 10k+ Daily Active Users"
-    ]
+    githubLink: 'https://github.com/yourusername/crm-system',
+    previewLink: 'https://crm-demo.com',
+    highlights: ['99.9% Uptime', '50ms Average Response Time', 'Handles 10k+ Daily Active Users'],
   },
   {
-    title: "Enterprise CRM System",
-    type: "fullstack",
+    title: 'Enterprise CRM System',
+    type: 'fullstack',
     description: [
-      "Built a complete CRM solution with role-based access control",
-      "Implemented real-time notifications using WebSockets",
-      "Integrated payment processing with Stripe",
-      "Automated email marketing campaigns",
-      "Built analytics dashboard with real-time data visualization"
+      'Built a complete CRM solution with role-based access control',
+      'Implemented real-time notifications using WebSockets',
+      'Integrated payment processing with Stripe',
+      'Automated email marketing campaigns',
+      'Built analytics dashboard with real-time data visualization',
     ],
-    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Redis", "AWS", "Stripe"],
+    techStack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Redis', 'AWS', 'Stripe'],
     images: [
-      { url: "/api/placeholder/800/400", alt: "CRM Dashboard" },
-      { url: "/api/placeholder/800/400", alt: "Analytics View" }
+      { url: '/api/placeholder/800/400', alt: 'CRM Dashboard' },
+      { url: '/api/placeholder/800/400', alt: 'Analytics View' },
     ],
-    githubLink: "https://github.com/yourusername/crm-system",
-    previewLink: "https://crm-demo.com",
-    highlights: [
-      "99.9% Uptime",
-      "50ms Average Response Time",
-      "Handles 10k+ Daily Active Users"
-    ]
-  }
+    githubLink: 'https://github.com/yourusername/crm-system',
+    previewLink: 'https://crm-demo.com',
+    highlights: ['99.9% Uptime', '50ms Average Response Time', 'Handles 10k+ Daily Active Users'],
+  },
   // Add more projects following the same structure
 ];
 
 const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState('all');
-  
+
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -125,15 +124,15 @@ const ProjectGrid: React.FC<{ projects: Project[] }> = ({ projects }) => {
 
 const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = useCallback(() => {
-    setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+    setCurrentImageIndex(prev => (prev + 1) % project.images.length);
   }, [project.images.length]);
 
   const prevImage = useCallback(() => {
-    setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
+    setCurrentImageIndex(prev => (prev - 1 + project.images.length) % project.images.length);
   }, [project.images.length]);
 
   // Auto-advance carousel
@@ -235,10 +234,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
             {project.highlights && (
               <div className="mt-4 grid grid-cols-3 gap-4">
                 {project.highlights.map((highlight, i) => (
-                  <div
-                    key={i}
-                    className="bg-gray-50 p-3 rounded-lg text-center"
-                  >
+                  <div key={i} className="bg-gray-50 p-3 rounded-lg text-center">
                     <p className="text-sm text-gray-600">{highlight}</p>
                   </div>
                 ))}

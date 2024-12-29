@@ -36,9 +36,7 @@ const Logo = () => (
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.3 }}
     >
-      <h1 className="text-3xl font-extrabold tracking-tight leading-none">
-        Abhinandan
-      </h1>
+      <h1 className="text-3xl font-extrabold tracking-tight leading-none">Abhinandan</h1>
       <p className="text-sm font-medium text-gray-400">Software Engineer</p>
     </motion.div>
   </motion.div>
