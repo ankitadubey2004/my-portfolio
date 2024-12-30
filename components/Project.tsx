@@ -341,52 +341,115 @@ const FullStackCard: React.FC<{ project: Project }> = ({ project }) => {
 };
 
 const LandingPageCard: React.FC<{ project: Project }> = ({ project }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="group relative overflow-hidden rounded-xl">
-      <div className="aspect-[16/9] w-full overflow-hidden">
+    <motion.div
+      className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-500"
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      whileHover={{ y: -5 }}
+    >
+      {/* Image Container */}
+      <div className="aspect-[16/9] w-full relative overflow-hidden">
         <Image
           src={project.images[0].url}
           alt={project.title}
           layout="fill"
           objectFit="cover"
-          className="transform transition-transform duration-500 group-hover:scale-110"
+          className="transform transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+        
+        {/* Project Type Badge */}
+        <div className="absolute top-4 right-4">
+          <Badge 
+            variant="secondary" 
+            className="bg-blue-500 text-white px-3 py-1 text-xs uppercase tracking-wider backdrop-blur-sm"
+          >
+            {project.type}
+          </Badge>
+        </div>
       </div>
 
-      <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.techStack.map((tech, i) => (
-            <Badge key={i} variant="secondary" className="bg-white/20 text-white backdrop-blur-sm">
-              {tech}
-            </Badge>
-          ))}
-        </div>
-        <div className="flex gap-4">
-          {project.githubLink && (
-            <Link
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-blue-300 transition-colors"
-            >
-              <FaGithub className="h-6 w-6" />
-            </Link>
-          )}
-          {project.previewLink && (
-            <Link
-              href={project.previewLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-blue-300 transition-colors"
-            >
-              <ExternalLink className="h-6 w-6" />
-            </Link>
-          )}
-        </div>
+      {/* Content Container - Always visible but transforms on hover */}
+      <div className="absolute inset-0 flex flex-col justify-end p-6 transition-transform duration-300">
+        <motion.div
+          animate={{ y: isHovered ? 0 : 60 }}
+          transition={{ duration: 0.3 }}
+          className="space-y-4"
+        >
+          {/* Title and Tech Stack - Always Visible */}
+          <div className="space-y-2">
+            <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
+              {project.title}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {project.techStack.slice(0, 3).map((tech, i) => (
+                <Badge
+                  key={i}
+                  variant="secondary"
+                  className="bg-white/10 text-white text-xs backdrop-blur-sm border border-white/20"
+                >
+                  {tech}
+                </Badge>
+              ))}
+              {project.techStack.length > 3 && (
+                <Badge
+                  variant="secondary"
+                  className="bg-white/10 text-white text-xs backdrop-blur-sm border border-white/20"
+                >
+                  +{project.techStack.length - 3} more
+                </Badge>
+              )}
+            </div>
+          </div>
+
+          {/* Description and Links - Visible on Hover/Mobile */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isHovered ? 1 : 0 }}
+            transition={{ duration: 0.2 }}
+            className="space-y-4"
+          >
+            {project.description.length > 0 && (
+              <p className="text-gray-200 text-sm line-clamp-2">
+                {project.description[0]}
+              </p>
+            )}
+            <div className="flex items-center gap-4">
+              {project.githubLink && (
+                <Link
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white hover:text-blue-300 transition-colors text-sm"
+                >
+                  <FaGithub className="h-5 w-5" />
+                  <span className="hidden md:inline">Source Code</span>
+                </Link>
+              )}
+              {project.previewLink && (
+                <Link
+                  href={project.previewLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white hover:text-blue-300 transition-colors text-sm group"
+                >
+                  <ExternalLink className="h-5 w-5" />
+                  <span className="hidden md:inline group-hover:underline">Live Preview</span>
+                </Link>
+              )}
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
+
+      {/* Mobile Touch Indicator */}
+      <div className="absolute bottom-2 right-2 md:hidden">
+        <div className="w-1.5 h-1.5 bg-white/50 rounded-full animate-pulse" />
+      </div>
+    </motion.div>
   );
 };
 

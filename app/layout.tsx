@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s | Abhinandan - Full Stack Engineer',
   },
   description:
-    'Senior Software Engineer specializing in Next.js, FastAPI, and Cloud Infrastructure. Expert in building scalable enterprise applications, CRM systems, and high-performance web solutions.',
+    'Senior Software Engineer & Technical Expert specializing in Next.js, FastAPI, and Cloud Infrastructure. Expert in building scalable enterprise applications, CRM systems, and high-performance web solutions. Available for technical consulting and enterprise projects.',
   keywords: [
     'Senior Software Engineer',
     'Full Stack Developer',
@@ -41,45 +41,72 @@ export const metadata: Metadata = {
     'DevOps Engineer',
     'Freelance Developer',
     'Software Consultant',
+    'Technical Lead',
+    'Solution Architect',
+    'Enterprise Applications',
+    'Web Development Expert',
+    'Performance Optimization',
+    'Scalable Systems',
+    'API Development',
+    'Database Design',
+    'Microservices Architecture',
+    'Cloud Infrastructure',
+    'AWS Expert',
+    'Technical Leadership',
+    'Software Architecture',
+    'Full Stack Engineering',
+    'Remote Developer',
+    'Independent Consultant',
   ],
+  alternates: {
+    canonical: 'https://abhinandan.pro',
+  },
+  authors: [{ name: 'Abhinandan', url: 'https://abhinandan.pro' }],
   creator: 'Abhinandan',
+  publisher: 'Abhinandan',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://abhinandan.pro',
     title: 'Abhinandan - Senior Software Engineer & Technical Expert',
     description:
-      'Full-stack developer specializing in Next.js, FastAPI, and enterprise solutions. Expert in building scalable, high-performance web applications.',
+      'Expert Full Stack Engineer specializing in Next.js, FastAPI, and enterprise solutions. Building scalable, high-performance web applications and providing technical leadership.',
     siteName: 'Abhinandan Portfolio',
     images: [
       {
         url: 'https://abhinandan.pro/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Abhinandan - Senior Software Engineer',
+        alt: 'Abhinandan - Senior Software Engineer & Technical Expert',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Abhinandan - Senior Software Engineer & Technical Expert',
-    description: 'Full-stack developer specializing in Next.js, FastAPI, and enterprise solutions.',
+    description: 'Expert Full Stack Engineer specializing in Next.js, FastAPI, and enterprise solutions.',
+    creator: '@awesome_v0',
     images: ['https://abhinandan.pro/og-image.png'],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
+  category: 'technology',
 };
 
 export default function RootLayout({

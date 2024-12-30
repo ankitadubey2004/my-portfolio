@@ -17,7 +17,7 @@ const skillCategories = [
       {
         name: 'Next.js',
         level: 'Expert',
-        experience: '3+ years',
+        experience: '1 years',
         details:
           'Advanced Server Components, Streaming SSR, React Server Actions, Edge Runtime optimization, App Router architecture, and advanced caching strategies. Expertise in building enterprise-grade micro-frontends.',
         projects: 'Large-scale E-commerce, Enterprise CRM',
@@ -26,7 +26,7 @@ const skillCategories = [
       {
         name: 'React.js',
         level: 'Expert',
-        experience: '4+ years',
+        experience: '1 years',
         details:
           'Advanced state management patterns, Custom Hooks architecture, Render optimization, Suspense patterns, concurrent features. Deep expertise in performance profiling and bundle optimization.',
         projects: 'Financial Dashboards, Real-time Analytics',
@@ -35,7 +35,7 @@ const skillCategories = [
       {
         name: 'TypeScript',
         level: 'Expert',
-        experience: '3+ years',
+        experience: '1 years',
         details:
           'Advanced type system architecture, Generic type patterns, Custom type utilities, Conditional types, Module augmentation. Build-time type checking and automated type generation.',
         projects: 'Enterprise SDK Development, API Frameworks',
@@ -50,16 +50,16 @@ const skillCategories = [
       {
         name: 'System Design',
         level: 'Advanced',
-        experience: '3+ years',
+        experience: '3 Months',
         details:
           'Distributed systems architecture, Event-driven design, CQRS patterns, Message queues, Rate limiting, Circuit breakers. Expertise in building highly available, fault-tolerant systems.',
         projects: 'High-load Payment Systems, Trading Platforms',
-        icon: '/skills/system-design.svg',
+        icon: '/skills/design.png',
       },
       {
         name: 'FastAPI',
         level: 'Expert',
-        experience: '2+ years',
+        experience: '6 Months',
         details:
           'Async IO optimization, WebSocket implementations, Custom middleware architecture, OpenAPI integration, Advanced dependency injection patterns, High-performance data streaming.',
         projects: 'Real-time Analytics, IoT Platforms',
@@ -68,7 +68,7 @@ const skillCategories = [
       {
         name: 'Golang',
         level: 'Advanced',
-        experience: '2+ years',
+        experience: '3 Months',
         details:
           'Goroutines optimization, Channel patterns, Memory management, Custom runtime schedulers, Advanced concurrency patterns, High-performance networking.',
         projects: 'Microservices Architecture, Trading Systems',
@@ -92,7 +92,7 @@ const skillCategories = [
       {
         name: 'MongoDB',
         level: 'Advanced',
-        experience: '2+ years',
+        experience: '1+ years',
         details: 'Schema design, aggregation pipelines',
         projects: 'NoSQL applications',
         icon: '/skills/mongodb.svg',
@@ -100,7 +100,7 @@ const skillCategories = [
       {
         name: 'Redis',
         level: 'Intermediate',
-        experience: '1+ year',
+        experience: '1 year',
         details: 'Caching, distributed systems',
         projects: 'Cache systems',
         icon: '/skills/redis.svg',
@@ -122,7 +122,7 @@ const skillCategories = [
       {
         name: 'DevOps Automation',
         level: 'Intermediate',
-        experience: '1+ years',
+        experience: '3 Months',
         details:
           'GitOps workflows, Infrastructure as Code, Automated deployment pipelines, Chaos engineering, Blue-green deployments, Canary releases.',
         projects: 'CI/CD Platforms, Cloud Infrastructure, Container orchestration',
@@ -131,7 +131,7 @@ const skillCategories = [
       {
         name: 'AWS',
         level: 'Advanced',
-        experience: '2+ years',
+        experience: '1 years',
         details: 'EC2, S3, Lambda, ECS deployment',
         projects: 'Cloud infrastructure',
         icon: '/skills/aws.svg',
