@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
-
 const StyledButton = ({ children, className, ...props }: any) => (
   <Button
     size="lg"

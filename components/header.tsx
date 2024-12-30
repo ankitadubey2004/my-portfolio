@@ -23,6 +23,18 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   // Add smooth scrolling
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {
@@ -47,80 +59,98 @@ const Header = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header
-      className={cn(
-        'fixed w-full top-0 z-[9999] transition-all duration-300',
-        scrolled
-          ? 'bg-white/20 dark:bg-gray-900/20 backdrop-blur-lg shadow-sm border-b border-gray-200/20'
-          : 'bg-transparent'
-      )}
-    >
-      <nav className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Link href="/" className="relative z-10 flex items-center space-x-2">
-              <Image
-                src="/logo.png"
-                alt="Logo"
-                width={180}
-                height={40}
-                className="hidden lg:block"
-              />
-              <Image
-                src="/logo-2.png"
-                alt="Logo"
-                width={40}
-                height={40}
-                className="block lg:hidden"
-              />
-            </Link>
-          </motion.div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <NavLinks />
-            <ThemeToggle theme={theme} setTheme={setTheme} />
-          </div>
-
-          {/* Mobile Navigation Toggle */}
-          <div className="flex items-center space-x-4 md:hidden">
-            <ThemeToggle theme={theme} setTheme={setTheme} />
-            <Button variant="ghost" size="icon" onClick={toggleMenu} className="relative z-[9999]">
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation Menu */}
-        <AnimatePresence>
-          {isOpen && (
+    <>
+      {/* Fixed Header */}
+      <header
+        className={cn(
+          'fixed w-full top-0 z-50 transition-all duration-300',
+          scrolled
+            ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-lg'
+            : 'bg-white/70 dark:bg-gray-900/70 backdrop-blur-md',
+          isOpen && 'bg-transparent backdrop-blur-none shadow-none'
+        )}
+      >
+        <nav className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg z-[999]"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="relative z-[60]"
             >
-              <div className="flex flex-col items-center justify-center h-screen space-y-8">
-                <NavLinks mobile onClick={() => setIsOpen(false)} />
-              </div>
+              <Link href="/" className="flex items-center space-x-2">
+                <Image
+                  src="/logo.png"
+                  alt="Logo"
+                  width={180}
+                  height={40}
+                  className="hidden lg:block"
+                />
+                <Image
+                  src="/logo-2.png"
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                  className="block lg:hidden"
+                />
+              </Link>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
-    </header>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <NavLinks />
+              <ThemeToggle theme={theme} setTheme={setTheme} />
+            </div>
+
+            {/* Mobile Navigation Toggle */}
+            <div className="flex items-center space-x-4 md:hidden">
+              <div className="relative z-[60]">
+                <ThemeToggle theme={theme} setTheme={setTheme} />
+              </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleMenu}
+                className="relative z-[60] hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full"
+              >
+                {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </Button>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      {/* Mobile Navigation Menu - Separate from header */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-white dark:bg-gray-900"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              className="flex flex-col items-center justify-center min-h-screen px-4 pt-16"
+            >
+              <NavLinks mobile onClick={() => setIsOpen(false)} />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
 const NavLinks = ({ mobile, onClick }: { mobile?: boolean; onClick?: () => void }) => {
   const links = [
     { href: '#hero', label: 'About' },
-    { href: '#skills', label: 'Skills' },
     { href: '#experience', label: 'Experience' },
+    { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' },
   ];
@@ -130,22 +160,23 @@ const NavLinks = ({ mobile, onClick }: { mobile?: boolean; onClick?: () => void 
       {links.map(({ href, label }, index) => (
         <motion.div
           key={href}
-          initial={{ opacity: 0, y: -10 }}
+          initial={{ opacity: 0, y: mobile ? 20 : -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: mobile ? index * 0.1 : 0 }}
+          className={mobile ? 'my-4' : ''}
         >
           <Link
             href={href}
             onClick={onClick}
             className={cn(
-              'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary',
+              'text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400',
               'transition-colors duration-200',
               'font-medium relative group',
-              mobile && 'text-2xl py-2'
+              mobile ? 'text-3xl py-3' : 'text-sm'
             )}
           >
             {label}
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full" />
           </Link>
         </motion.div>
       ))}
