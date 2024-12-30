@@ -100,7 +100,7 @@ const Contact = () => {
                   <Button
                     asChild
                     variant="ghost"
-                    className="group-hover:translate-x-2 transition-transform duration-300 text-blue-400 hover:text-blue-300 hover:bg-transparent p-0"
+                    className="group-hover:translate-x-2 transition-transform duration-300 text-blue-400 hover:text-blue-300 hover:bg-transparent p-0 rounded-full"
                   >
                     <Link href={item.href} target="_blank" rel="noopener noreferrer">
                       {item.action} <ArrowRight className="ml-2 h-5 w-5" />
@@ -147,7 +147,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white h-12 text-lg transition-all duration-300 relative overflow-hidden group"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white h-12 text-lg transition-all duration-300 relative overflow-hidden group rounded-full"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center justify-center">
