@@ -8,11 +8,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
-const achievements = [
-  { number: '30+', label: 'Projects Launched' },
-  { number: '7+', label: 'Enterprise Solutions' },
-  { number: '15k+', label: 'Users Impacted' },
-];
 
 const StyledButton = ({ children, className, ...props }: any) => (
   <Button
@@ -35,7 +30,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative min-h-[98vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 mt-5 md:mt-0"
+      className="relative min-h-[98vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950"
       id="hero"
     >
       {/* Background Elements */}
@@ -44,14 +39,14 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(white,transparent_85%)] dark:opacity-20" />
       </div>
 
-      <div className="container mx-auto px-4 py-8 md:py-16 relative z-10">
+      <div className="container mx-auto px-4 py-8 md:py-16 relative z-10 mt-10 md:mt-0">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6 md:space-y-8 text-center lg:text-left"
+            className="space-y-6 md:space-y-8 text-center lg:text-left pt-8 md:pt-0"
           >
             {/* Leadership Statement */}
             <motion.div
@@ -60,7 +55,7 @@ const Hero = () => {
               transition={{ delay: 0.2 }}
               className="inline-block"
             >
-              <span className="px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium backdrop-blur-sm">
+              <span className="inline-flex px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium backdrop-blur-sm">
                 Founder & Tech Leader
               </span>
             </motion.div>
@@ -156,46 +151,17 @@ const Hero = () => {
               {/* Main Profile Image */}
               <div
                 className="relative z-10 rounded-3xl overflow-hidden shadow-2xl 
-                before:absolute before:inset-0 before:bg-blue-500/10 before:z-10"
+                before:absolute before:inset-0 before:bg-blue-500/10 before:z-10 group transition-transform duration-300"
               >
                 <Image
                   src={profileImage}
                   alt="Your Name"
                   width={500}
                   height={500}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   priority
                 />
               </div>
-
-              {/* Floating Project Cards - Only visible on larger screens */}
-              {/* <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7 }}
-                className="absolute -right-4 lg:-right-16 top-16 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg z-20 hidden md:block backdrop-blur-sm"
-              >
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  <span className="text-sm font-medium whitespace-nowrap">
-                    Latest: Enterprise CRM Solution
-                  </span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8 }}
-                className="absolute -left-4 lg:-left-16 bottom-16 bg-white/70 dark:bg-gray-800 p-4 rounded-xl shadow-lg z-20 hidden md:block backdrop-blur-sm"
-              >
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-                  <span className="text-sm font-medium whitespace-nowrap">
-                    Featured: Solana dApp
-                  </span>
-                </div>
-              </motion.div> */}
 
               {/* Background Elements */}
               <div className="absolute inset-0 -z-10">
