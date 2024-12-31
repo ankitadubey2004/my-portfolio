@@ -195,9 +195,8 @@ const projects: Project[] = [
     ],
     images: [{ url: '/projects/aarogya-arch.webp', alt: 'Aarogya Architecture Diagram' }],
     githubLink: 'https://github.com/awesome-pro/aarogya',
-    deploymentLink: 'https://api.aarogya.pro',
-    postmanLink: 'https://www.postman.com/awesome-pro/workspace/aarogya',
-    lldLink: 'https://github.com/awesome-pro/aarogya/blob/main/docs/ARCHITECTURE.md',
+   
+    lldLink: 'https://app.eraser.io/workspace/MHpqxq6BCLBfAfOeUnav?origin=share',
     apiEndpoints: [
       'GET /api/appointments',
       'POST /api/appointments/schedule',
@@ -220,6 +219,8 @@ const projects: Project[] = [
     techStack: ['Node.js', 'Express', 'MongoDB', 'Sharp', 'Multer'],
     images: [{ url: '/placeholder.svg?height=400&width=800', alt: 'E-commerce API Architecture' }],
     githubLink: 'https://github.com/awesome-pro/aarogya',
+    deploymentLink: 'https://nodebackend-y2pf.onrender.com',
+    lldLink: 'https://app.eraser.io/workspace/Ob3EN5IXxKZW1lOMg3Mi?origin=share',
     apiEndpoints: [
       'GET /api/products',
       'POST /api/orders',
@@ -231,9 +232,9 @@ const projects: Project[] = [
 ];
 
 const ProjectsSection = () => {
-  const [filter, setFilter] = useState<'all' | 'fullstack' | 'landing' | 'backend'>('all');
+  const [filter, setFilter] = useState<'fullstack' | 'landing' | 'backend'>('landing');
 
-  const filteredProjects = projects.filter(project => filter === 'all' || project.type === filter);
+  const filteredProjects = projects.filter(project => !filter || project.type === filter);
 
   return (
     <section
@@ -307,7 +308,7 @@ const FullStackCard: React.FC<{ project: Project }> = ({ project }) => {
 
   return (
     <Card className="overflow-hidden group transform transition-all duration-300 hover:shadow-xl dark:bg-gray-800">
-      <div className="relative h-64">
+      <div className="relative h-80">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentImageIndex}

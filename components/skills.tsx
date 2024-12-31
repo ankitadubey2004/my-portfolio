@@ -114,7 +114,7 @@ const skillCategories = [
       {
         name: 'Docker',
         level: 'Intermediate',
-        experience: '2+ years',
+        experience: '~1 years',
         details: 'Container orchestration, multi-stage builds',
         projects: 'Microservices deployment',
         icon: '/skills/docker.svg',
@@ -290,9 +290,7 @@ const SkillsSection = () => {
                   'Distributed Systems',
                   'FinTech Solutions',
                   'Real-time Processing',
-                  'Security Compliance',
                   'Scalable Infrastructure',
-                  'Data Engineering',
                 ].map(domain => (
                   <Badge
                     key={domain}

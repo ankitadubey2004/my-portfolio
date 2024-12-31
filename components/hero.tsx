@@ -121,7 +121,7 @@ const Hero = () => {
                 asChild
               >
                 <Link
-                  href="https://calendly.com/yourusername"
+                  href="https://cal.com/awesome_v0/15min"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center"

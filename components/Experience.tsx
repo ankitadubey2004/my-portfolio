@@ -52,7 +52,6 @@ const experiences: ExperienceItem[] = [
       'WeasyPrint',
     ],
     images: ['/caresept.png'],
-    proofLink: 'https://example.com/caresept-proof',
   },
   {
     position: 'Freelance Software Engineer',
@@ -88,7 +87,7 @@ const experiences: ExperienceItem[] = [
       'AWS EC2',
     ],
     images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
-    proofLink: 'https://example.com/avencrm-proof',
+    // proofLink: 'https://example.com/avencrm-proof',
   },
   {
     position: 'Open Source Contributor',
@@ -113,7 +112,7 @@ const experiences: ExperienceItem[] = [
       'React Testing Library',
     ],
     images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
-    proofLink: 'https://github.com/nextui-org/nextui/pulls?q=is%3Apr+author%3AYourGitHubUsername',
+    proofLink: '/nextui',
   },
   {
     position: 'Software Development Intern',
@@ -138,7 +137,7 @@ const experiences: ExperienceItem[] = [
       'Docker',
     ],
     images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
-    proofLink: 'https://example.com/skilledup-internship-certificate',
+    // proofLink: 'https://example.com/skilledup-internship-certificate',
   },
 ];
 
