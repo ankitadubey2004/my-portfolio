@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-const title = 'Abhinandan - Enterpreneur & Technical Expert';
+const title = 'Abhinandan - Enterpreneur & Technical Enterpreneur';
 const description =
   'Niche Expert Engineer specializing in Next.js, FastAPI, Kubernetes, and Cloud Infrastructure. Expert in building scalable web applications and microservices architecture.';
 
@@ -13,7 +13,7 @@ export const sharedMetadata: Metadata = {
   description,
   keywords: [
     'Enterpreneur',
-    'Technical Expert',
+    'Technical Enterpreneur',
     'Senior Software Engineer',
     'Full Stack Developer',
     'Next.js Expert',
@@ -56,7 +56,7 @@ export const sharedMetadata: Metadata = {
     siteName: title,
     images: [
       {
-        url: '/profile.png',
+        url: '/1200x630.png',
         width: 1200,
         height: 630,
         alt: title,
@@ -68,7 +68,7 @@ export const sharedMetadata: Metadata = {
     title,
     description,
     creator: '@awesome_v0',
-    images: ['/profile.png'],
+    images: ['/1200x630.png'],
   },
   robots: {
     index: true,
@@ -84,7 +84,7 @@ export const sharedMetadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code', // Add your Google Search Console verification code
+    google: '1234567890', // Add your Google Search Console verification code
   },
   category: 'technology',
   classification: 'Business',

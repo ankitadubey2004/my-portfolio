@@ -40,7 +40,7 @@ export default function StructuredData() {
       'Performance Optimization',
       'Scalable Web Applications',
     ],
-    description: `Senior Software Engineer and Technical Expert specializing in Next.js, FastAPI, and Cloud Infrastructure. 
+    description: `Senior Software Engineer and Technical Enterpreneur specializing in Next.js, FastAPI, and Cloud Infrastructure. 
     Proven track record in building scalable enterprise applications, CRM systems, and high-performance web solutions. 
     Expert in modern web technologies, system design, and technical architecture.`,
     hasOccupation: {

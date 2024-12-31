@@ -20,14 +20,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://abhinandan.pro'),
   title: {
-    default: 'Abhinandan | Enterpreneur & Technical Expert',
-    template: '%s | Abhinandan - Enterpreneur & Technical Expert',
+    default: 'Abhinandan | Enterpreneur & Technical Enterpreneur',
+    template: '%s | Abhinandan - Enterpreneur & Technical Enterpreneur',
   },
   description:
-    'Enterpreneur & Technical Expert specializing in Next.js, FastAPI, Kubernetes, and Cloud Infrastructure. Expert in building scalable enterprise applications, CRM systems, and high-performance web solutions. Available for technical consulting and enterprise projects.',
+    'Enterpreneur & Technical Enterpreneur specializing in Next.js, FastAPI, Kubernetes, and Cloud Infrastructure. Expert in building scalable enterprise applications, CRM systems, and high-performance web solutions. Available for technical consulting and enterprise projects.',
   keywords: [
     'Enterpreneur',
-    'Technical Expert',
+    'Technical Enterpreneur',
     'Senior Software Engineer',
     'Full Stack Developer',
     'Next.js Expert',
@@ -75,25 +75,42 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://abhinandan.pro',
-    title: 'Abhinandan - Senior Software Engineer & Technical Expert',
+    title: 'Abhinandan - Senior Software Engineer & Technical Enterpreneur',
     description:
       'Expert Full Stack Engineer specializing in Next.js, FastAPI, and enterprise solutions. Building scalable, high-performance web applications and providing technical leadership.',
     siteName: 'Abhinandan Portfolio',
     images: [
       {
-        url: 'https://abhinandan.pro/og-image.png',
+        url: 'https://abhinandan.pro/1200x630.png',
         width: 1200,
         height: 630,
-        alt: 'Abhinandan - Senior Software Engineer & Technical Expert',
+        alt: 'Abhinandan - Niche Expert Engineer & Technical Enterpreneur',
+        type: 'image/png',
+      },
+      {
+        url: 'https://abhinandan.pro/1080x1080.png',
+        width: 1080,
+        height: 1080,
+        alt: 'Abhinandan - Niche Expert Engineer & Technical Enterpreneur',
+        type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Abhinandan - Senior Software Engineer & Technical Expert',
-    description: 'Expert Full Stack Engineer specializing in Next.js, FastAPI, and enterprise solutions.',
+    title: 'Abhinandan - Niche Expert Engineer & Technical Enterpreneur',
+    description:
+      'Expert Full Stack Engineer specializing in Next.js, FastAPI, and enterprise solutions. Available for technical consulting and enterprise projects.',
     creator: '@awesome_v0',
-    images: ['https://abhinandan.pro/og-image.png'],
+    images: [
+      {
+        url: 'https://abhinandan.pro/1200x630.png',
+        width: 1200,
+        height: 630,
+        alt: 'Abhinandan - Niche Expert Engineer & Technical Enterpreneur',
+        type: 'image/png',
+      },
+    ],
   },
   robots: {
     index: true,
@@ -111,11 +128,11 @@ export const metadata: Metadata = {
   category: 'technology',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const generateStaticParams = async () => {
+  return [{ locale: 'en' }];
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
