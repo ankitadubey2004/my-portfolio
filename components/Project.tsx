@@ -91,13 +91,13 @@ const projects: Project[] = [
     highlights: ['99.9% Uptime', '50ms Average Response Time', '10k+ Daily Active Users'],
   },
   {
-    title: 'Kobil - The SuperAPP platform',
+    title: 'Rogil - The SuperAPP platform',
     type: 'landing',
     description: [],
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'NextUI'],
-    images: [{ url: '/kobil.webp', alt: 'Kobil SuperAPP Landing Page' }],
-    githubLink: 'https://github.com/example/kobil-landing',
-    previewLink: 'https://kobil.com',
+    images: [{ url: '/Rogil.webp', alt: 'Rogil SuperAPP Landing Page' }],
+    githubLink: 'https://github.com/example/Rogil-landing',
+    previewLink: 'https://Rogil.com',
   },
   {
     title: 'Brick - The Real Estate Property ',
@@ -320,9 +320,9 @@ const FullStackCard: React.FC<{ project: Project }> = ({ project }) => {
             <Image
               src={project.images[currentImageIndex].url}
               alt={project.images[currentImageIndex].alt}
-              layout="fill"
-              objectFit="cover"
-              className="transition-transform duration-500 group-hover:scale-105"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
           </motion.div>
@@ -426,9 +426,9 @@ const LandingPageCard: React.FC<{ project: Project }> = ({ project }) => {
         <Image
           src={project.images[0].url}
           alt={project.title}
-          layout="fill"
-          objectFit="cover"
-          className="transform transition-transform duration-700 group-hover:scale-110"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transform transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
 

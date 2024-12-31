@@ -158,6 +158,7 @@ const SkillCard = ({ skill }: { skill: any }) => {
               src={skill.icon}
               alt={skill.name}
               fill
+              sizes="(max-width: 768px) 56px, 56px"
               className="object-contain filter dark:invert-[.85]"
             />
           </div>

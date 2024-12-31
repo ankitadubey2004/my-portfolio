@@ -1,5 +1,27 @@
+# Allow all crawlers
 User-agent: *
 Allow: /
 
+# Optimize crawling
+Crawl-delay: 10
+
+# Block specific paths if needed
+Disallow: /api/
+Disallow: /_next/
+
 # Sitemaps
 Sitemap: https://abhinandan.pro/sitemap.xml
+
+# Additional directives for major search engines
+User-agent: Googlebot
+Allow: /
+Allow: /*.js$
+Allow: /*.css$
+
+User-agent: Bingbot
+Allow: /
+Allow: /*.js$
+Allow: /*.css$
+
+User-agent: DuckDuckBot
+Allow: /

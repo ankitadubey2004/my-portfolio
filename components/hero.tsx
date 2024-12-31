@@ -21,7 +21,7 @@ const StyledButton = ({ children, className, ...props }: any) => (
 
 const Hero = () => {
   const { theme } = useTheme();
-  const [profileImage, setProfileImage] = useState('/p-1.jpg');
+  const [profileImage, setProfileImage] = useState('/p-6.jpg');
 
   useEffect(() => {
     setProfileImage(theme === 'dark' ? '/p-6.jpg' : '/p-6.jpg');
@@ -55,7 +55,7 @@ const Hero = () => {
               className="inline-block"
             >
               <span className="inline-flex px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium backdrop-blur-sm">
-                Founder & Tech Leader
+                Enterpreneur & Tech Leader
               </span>
             </motion.div>
 
@@ -157,6 +157,7 @@ const Hero = () => {
                   alt="Your Name"
                   width={500}
                   height={500}
+                  sizes="(max-width: 768px) 100vw, 500px"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   priority
                 />

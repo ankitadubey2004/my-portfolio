@@ -20,12 +20,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://abhinandan.pro'),
   title: {
-    default: 'Abhinandan | Senior Software Engineer & Technical Expert',
-    template: '%s | Abhinandan - Full Stack Engineer',
+    default: 'Abhinandan | Enterpreneur & Technical Expert',
+    template: '%s | Abhinandan - Enterpreneur & Technical Expert',
   },
   description:
-    'Senior Software Engineer & Technical Expert specializing in Next.js, FastAPI, and Cloud Infrastructure. Expert in building scalable enterprise applications, CRM systems, and high-performance web solutions. Available for technical consulting and enterprise projects.',
+    'Enterpreneur & Technical Expert specializing in Next.js, FastAPI, Kubernetes, and Cloud Infrastructure. Expert in building scalable enterprise applications, CRM systems, and high-performance web solutions. Available for technical consulting and enterprise projects.',
   keywords: [
+    'Enterpreneur',
+    'Technical Expert',
     'Senior Software Engineer',
     'Full Stack Developer',
     'Next.js Expert',
@@ -111,13 +113,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#000000" />
         <StructuredData />
       </head>
