@@ -53,10 +53,10 @@ const projects: Project[] = [
       'CI/CD',
     ],
     images: [
-      { url: '/placeholder.svg?height=400&width=800', alt: 'CRM Dashboard' },
-      { url: '/placeholder.svg?height=400&width=800', alt: 'Analytics View' },
+      { url: '/projects/aven-1.webp', alt: 'CRM Dashboard' },
+      { url: '/projects/aven-2.webp', alt: 'Analytics View' },
     ],
-    githubLink: 'https://github.com/example/avencrm',
+    githubLink: 'https://github.com/awesome-pro/avencrm',
     previewLink: 'https://avencrm.com',
     highlights: ['99.9% Uptime', '50ms Average Response Time', '10k+ Daily Active Users'],
   },
@@ -83,11 +83,11 @@ const projects: Project[] = [
       'CI/CD',
     ],
     images: [
-      { url: '/placeholder.svg?height=400&width=800', alt: 'CRM Dashboard' },
-      { url: '/placeholder.svg?height=400&width=800', alt: 'Analytics View' },
+      { url: '/projects/finance-1.webp', alt: 'CRM Dashboard' },
+      { url: '/projects/finance-2.webp', alt: 'Analytics View' },
     ],
-    githubLink: 'https://github.com/example/avencrm',
-    previewLink: 'https://avencrm.com',
+    githubLink: 'https://github.com/example/finance-dashboard',
+    previewLink: 'https://financedashboard.com',
     highlights: ['99.9% Uptime', '50ms Average Response Time', '10k+ Daily Active Users'],
   },
   {
@@ -95,7 +95,7 @@ const projects: Project[] = [
     type: 'landing',
     description: [],
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'NextUI'],
-    images: [{ url: '/kobil.png', alt: 'Kobil SuperAPP Landing Page' }],
+    images: [{ url: '/kobil.webp', alt: 'Kobil SuperAPP Landing Page' }],
     githubLink: 'https://github.com/example/kobil-landing',
     previewLink: 'https://kobil.com',
   },
@@ -104,7 +104,7 @@ const projects: Project[] = [
     type: 'landing',
     description: [],
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'CuiCui UI'],
-    images: [{ url: '/brick-2.png', alt: 'Brick Landing Page' }],
+    images: [{ url: '/brick-2.webp', alt: 'Brick Landing Page' }],
     githubLink: 'https://github.com/example/brick-landing',
     previewLink: 'https://brick.com',
   },
@@ -113,7 +113,7 @@ const projects: Project[] = [
     type: 'landing',
     description: [],
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/bistro-1.png', alt: 'Bistro Landing Page' }],
+    images: [{ url: '/projects/bistro-1.webp', alt: 'Bistro Landing Page' }],
     githubLink: 'https://github.com/example/bistro-landing',
     previewLink: 'https://bistro.com',
   },
@@ -122,7 +122,7 @@ const projects: Project[] = [
     type: 'landing',
     description: [],
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/chat-origin.png', alt: 'Chat Origin Landing Page' }],
+    images: [{ url: '/projects/chat-origin.webp', alt: 'Chat Origin Landing Page' }],
     githubLink: 'https://github.com/example/chat-origin-landing',
     previewLink: 'https://chatorigin.com',
   },
@@ -131,7 +131,7 @@ const projects: Project[] = [
     type: 'landing',
     description: [],
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/navigator-2.png', alt: 'Navigator Landing Page' }],
+    images: [{ url: '/projects/navigator-2.webp', alt: 'Navigator Landing Page' }],
     githubLink: 'https://github.com/example/navigator-landing',
     previewLink: 'https://navigator.com',
   },
@@ -140,7 +140,7 @@ const projects: Project[] = [
     type: 'landing',
     description: [],
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/sassy.png', alt: 'SaaSy Landing Page' }],
+    images: [{ url: '/projects/sassy.webp', alt: 'SaaSy Landing Page' }],
     githubLink: 'https://github.com/awesome-pro/saasy',
     previewLink: 'https://saasy.com',
   },
@@ -149,7 +149,7 @@ const projects: Project[] = [
     type: 'landing',
     description: [],
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/travelog.png', alt: 'Travelog Landing Page' }],
+    images: [{ url: '/projects/travelog.webp', alt: 'Travelog Landing Page' }],
     githubLink: 'https://github.com/example/travelog-landing',
     previewLink: 'https://travelog.com',
   },
@@ -158,7 +158,7 @@ const projects: Project[] = [
     type: 'landing',
     description: [],
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/coursespace-2.png', alt: 'CourseSpace Landing Page' }],
+    images: [{ url: '/projects/coursespace-2.webp', alt: 'CourseSpace Landing Page' }],
     githubLink: 'https://github.com/example/coursespace-landing',
     previewLink: 'https://coursespace.com',
   },
@@ -167,7 +167,7 @@ const projects: Project[] = [
     type: 'landing',
     description: [],
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/caresept.png', alt: 'Caresept Landing Page' }],
+    images: [{ url: '/projects/caresept.webp', alt: 'Caresept Landing Page' }],
     githubLink: 'https://github.com/example/caresept-landing',
     previewLink: 'https://caresept.com',
   },
@@ -191,9 +191,9 @@ const projects: Project[] = [
       'BullMQ',
       'WebSocket',
       'Twilio',
-      'JWT'
+      'JWT',
     ],
-    images: [{ url: '/projects/aarogya-arch.png', alt: 'Aarogya Architecture Diagram' }],
+    images: [{ url: '/projects/aarogya-arch.webp', alt: 'Aarogya Architecture Diagram' }],
     githubLink: 'https://github.com/awesome-pro/aarogya',
     deploymentLink: 'https://api.aarogya.pro',
     postmanLink: 'https://www.postman.com/awesome-pro/workspace/aarogya',
@@ -204,9 +204,9 @@ const projects: Project[] = [
       'PUT /api/appointments/:id',
       'GET /api/doctors/availability',
       'POST /api/notifications/subscribe',
-      'GET /api/patients/:id/history'
+      'GET /api/patients/:id/history',
     ],
-    highlights: ['99.9% Uptime', '60% Faster Response', '50% Cost Reduction']
+    highlights: ['99.9% Uptime', '60% Faster Response', '50% Cost Reduction'],
   },
   {
     title: 'Image_Processor - The Image Processing API',
@@ -592,7 +592,12 @@ const BackendCard: React.FC<{ project: Project }> = ({ project }) => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 hover:bg-purple-100 dark:bg-purple-900/30 dark:hover:bg-purple-900/50 text-purple-700 dark:text-purple-300 transition-colors text-sm font-medium"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                />
               </svg>
               <span>System Design</span>
             </Link>
@@ -642,7 +647,10 @@ const BackendCard: React.FC<{ project: Project }> = ({ project }) => {
             >
               <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
                 {project.apiEndpoints?.map((endpoint, i) => (
-                  <div key={i} className="p-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                  <div
+                    key={i}
+                    className="p-3 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  >
                     <code className="text-sm font-mono text-blue-600 dark:text-blue-400">
                       {endpoint}
                     </code>
@@ -664,7 +672,9 @@ const BackendCard: React.FC<{ project: Project }> = ({ project }) => {
                   key={i}
                   className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-900/30 p-4 rounded-lg text-center"
                 >
-                  <p className="text-sm font-medium text-blue-700 dark:text-blue-300">{highlight}</p>
+                  <p className="text-sm font-medium text-blue-700 dark:text-blue-300">
+                    {highlight}
+                  </p>
                 </div>
               ))}
             </motion.div>
