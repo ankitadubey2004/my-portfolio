@@ -229,7 +229,7 @@ const SkillsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
-            Technical Enterpreneurise
+            Tech Expertise
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Specialized in modern web technologies with a focus on scalable, enterprise-grade

@@ -20,14 +20,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://abhinandan.pro'),
   title: {
-    default: 'Abhinandan | Enterpreneur & Technical Enterpreneur',
-    template: '%s | Abhinandan - Enterpreneur & Technical Enterpreneur',
+    default: 'Abhinandan | Enterpreneur & Tech Expert',
+    template: '%s | Abhinandan - Enterpreneur & Tech Expert',
   },
   description:
-    'Enterpreneur & Technical Enterpreneur specializing in Next.js, FastAPI, Kubernetes, and Cloud Infrastructure. Expert in building scalable enterprise applications, CRM systems, and high-performance web solutions. Available for technical consulting and enterprise projects.',
+    'Enterpreneur & Tech Expert specializing in Next.js, FastAPI, Kubernetes, and Cloud Infrastructure. Expert in building scalable enterprise applications, CRM systems, and high-performance web solutions. Available for technical consulting and enterprise projects.',
   keywords: [
     'Enterpreneur',
-    'Technical Enterpreneur',
+    'Tech Expert',
     'Senior Software Engineer',
     'Full Stack Developer',
     'Next.js Expert',
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://abhinandan.pro',
-    title: 'Abhinandan - Senior Software Engineer & Technical Enterpreneur',
+    title: 'Abhinandan - Senior Software Engineer & Tech Expert',
     description:
       'Expert Full Stack Engineer specializing in Next.js, FastAPI, and enterprise solutions. Building scalable, high-performance web applications and providing technical leadership.',
     siteName: 'Abhinandan Portfolio',
@@ -84,21 +84,21 @@ export const metadata: Metadata = {
         url: 'https://abhinandan.pro/1200x630.png',
         width: 1200,
         height: 630,
-        alt: 'Abhinandan - Niche Expert Engineer & Technical Enterpreneur',
+        alt: 'Abhinandan - Niche Expert Engineer & Tech Expert',
         type: 'image/png',
       },
       {
-        url: 'https://abhinandan.pro/1080x1080.png',
+        url: 'https://abhinandan.pro/1080.png',
         width: 1080,
         height: 1080,
-        alt: 'Abhinandan - Niche Expert Engineer & Technical Enterpreneur',
+        alt: 'Abhinandan - Niche Expert Engineer & Tech Expert',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Abhinandan - Niche Expert Engineer & Technical Enterpreneur',
+    title: 'Abhinandan - Niche Expert Engineer & Tech Expert',
     description:
       'Expert Full Stack Engineer specializing in Next.js, FastAPI, and enterprise solutions. Available for technical consulting and enterprise projects.',
     creator: '@awesome_v0',
@@ -107,7 +107,7 @@ export const metadata: Metadata = {
         url: 'https://abhinandan.pro/1200x630.png',
         width: 1200,
         height: 630,
-        alt: 'Abhinandan - Niche Expert Engineer & Technical Enterpreneur',
+        alt: 'Abhinandan - Niche Expert Engineer & Tech Expert',
         type: 'image/png',
       },
     ],
