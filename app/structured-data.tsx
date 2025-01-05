@@ -4,7 +4,7 @@ export default function StructuredData() {
     '@type': 'Person',
     name: 'Abhinandan',
     url: 'https://abhinandan.pro',
-    image: 'https://abhinandan.pro/profile.jpg',
+    image: 'https://abhinandan.pro/p-6.jpg',
     sameAs: [
       'https://github.com/awesome-pro',
       'https://linkedin.com/in/abhinandan-verma',
