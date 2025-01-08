@@ -1,8 +1,53 @@
+'use client';
+
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaCheckCircle } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+
+const SystemStatus = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="flex items-center space-x-3 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-900/50 px-4 py-2 rounded-full shadow-md"
+    >
+      <motion.div
+        animate={{
+          scale: [1, 1.1, 1],
+          rotate: [0, 5, -5, 0],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          repeatType: 'loop',
+        }}
+      >
+        <FaCheckCircle className="text-green-600 dark:text-green-400 w-5 h-5" />
+      </motion.div>
+      <div>
+        <p className="text-xs font-medium text-green-800 dark:text-green-200">
+          All Systems Operational
+        </p>
+      </div>
+      <motion.div
+        className="w-2 h-2 bg-green-500 rounded-full"
+        animate={{
+          scale: [1, 1.5, 1],
+          opacity: [0.5, 1, 0.5],
+        }}
+        transition={{
+          duration: 2.5,
+          repeat: Infinity,
+          repeatType: 'loop',
+        }}
+      />
+    </motion.div>
+  );
+};
 
 const Footer = () => {
   const socialLinks = [
@@ -44,7 +89,7 @@ const Footer = () => {
       <div className="bg-gradient-to-b from-gray-50/50 to-gray-100/50 dark:from-gray-900/50 dark:to-gray-950/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           {/* Main footer content */}
-          <div className="py-12 flex flex-col md:flex-row justify-between">
+          <div className="py-12 flex flex-col md:flex-row justify-between items-center">
             {/* Logo and description */}
             <div className="flex flex-col space-y-4">
               <Link href="/">
@@ -55,8 +100,12 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* Social Links */}
+            {/* System Status and Social Links */}
             <div className="flex flex-col space-y-4">
+              {/* System Status */}
+              <SystemStatus />
+
+              {/* Social Links */}
               <div className="flex flex-wrap gap-2">
                 {socialLinks.map(social => (
                   <Button
