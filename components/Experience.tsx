@@ -98,9 +98,7 @@ const experiences: ExperienceItem[] = [
       'Secured direct offer from CEO after delivering exceptional contributions to core framework',
       'Spearheaded 7+ major feature enhancements, driving 40% improvement in component adoption rate',
       'Resolved 10+ critical bugs in Calendar and Pagination components, achieving 99.9% stability',
-      'Engineered enterprise-grade reusable UI components used by 1000+ developers globally',
-      'Authored comprehensive documentation improving developer onboarding time by 50%',
-      'Mentored 5+ junior contributors, fostering community growth and code quality',
+      'Contributed to enterprise-grade reusable UI components used by 1000+ developers globally',
     ],
     skills: [
       'Next.js',
@@ -294,7 +292,7 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
                     'Automated',
                     'Secured',
                     'Resolved',
-                    'Mentored',
+                    'Contributed',
                   ].join('|');
 
                   const finalText = withTechHighlights.replace(

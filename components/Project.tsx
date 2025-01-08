@@ -5,9 +5,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaLock } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
 
 interface ProjectImage {
   url: string;
@@ -27,6 +38,7 @@ interface Project {
   postmanLink?: string;
   lldLink?: string;
   deploymentLink?: string;
+  isPrivate?: boolean;
 }
 
 const projects: Project[] = [
@@ -59,6 +71,7 @@ const projects: Project[] = [
     githubLink: 'https://github.com/awesome-pro/estate',
     previewLink: 'https://avencrm.com',
     highlights: ['99.9% Uptime', '50ms Average Response Time', '10k+ Daily Active Users'],
+    isPrivate: true,
   },
   {
     title: 'Finance - The Finance Dashboard',
@@ -383,17 +396,68 @@ const FullStackCard: React.FC<{ project: Project }> = ({ project }) => {
       </CardContent>
 
       <CardFooter className="flex justify-between p-6 bg-gray-50 dark:bg-gray-700">
-        {project.githubLink && (
-          <Link
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-          >
-            <FaGithub className="h-5 w-5" />
-            <span>Source Code</span>
-          </Link>
-        )}
+        {project.githubLink &&
+          (project.isPrivate ? (
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <button className="flex items-center gap-2 rounded-md bg-gray-100 px-4 py-2 text-gray-700 shadow hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700">
+                  <FaGithub className="h-5 w-5" />
+                  <span>Source Code</span>
+                </button>
+              </AlertDialogTrigger>
+              <AlertDialogContent className="sm:max-w-[450px] rounded-lg bg-white p-6 shadow-lg dark:bg-gray-900">
+                <AlertDialogHeader className="text-center">
+                  <div className="flex justify-center mb-2">
+                    <FaLock className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                  </div>
+                  <AlertDialogTitle className="text-2xl font-semibold text-gray-800 dark:text-gray-200">
+                    Private Repository
+                  </AlertDialogTitle>
+                  <AlertDialogDescription className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                    This project is currently in{' '}
+                    <span className="font-semibold text-primary-800 dark:text-gray-200">
+                      production
+                    </span>{' '}
+                    and generating{' '}
+                    <span className="font-semibold text-gray-800 dark:text-gray-200">revenue</span>.
+                    Hence, the source code is kept private for{' '}
+                    <span className="font-semibold text-gray-800 dark:text-gray-200">
+                      business reasons.
+                    </span>
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter className="mt-4 flex justify-center gap-3">
+                  <AlertDialogCancel asChild>
+                    <button className="rounded-full bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 shadow hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700">
+                      I understand
+                    </button>
+                  </AlertDialogCancel>
+                  {project.previewLink && (
+                    <AlertDialogAction asChild>
+                      <Link
+                        href={project.previewLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center rounded-full bg-blue-600 px-5 py-2 text-sm font-medium text-white shadow-lg transition-transform hover:scale-105 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+                      >
+                        View Live Demo
+                      </Link>
+                    </AlertDialogAction>
+                  )}
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          ) : (
+            <Link
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+            >
+              <FaGithub className="h-5 w-5" />
+              <span>Source Code</span>
+            </Link>
+          ))}
         {project.previewLink && (
           <Link
             href={project.previewLink}
