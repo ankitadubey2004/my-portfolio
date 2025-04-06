@@ -15,7 +15,7 @@ const SystemStatus = () => {
       transition={{ duration: 0.5 }}
       className="flex items-center space-x-3 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-900/50 px-4 py-2 rounded-full shadow-md"
     >
-      <motion.div
+      {/* <motion.div
         animate={{
           scale: [1, 1.1, 1],
           rotate: [0, 5, -5, 0],
@@ -27,7 +27,7 @@ const SystemStatus = () => {
         }}
       >
         <FaCheckCircle className="text-green-600 dark:text-green-400 w-5 h-5" />
-      </motion.div>
+      </motion.div> */}
       <div>
         <p className="text-xs font-medium text-green-800 dark:text-green-200">
           All Systems Operational

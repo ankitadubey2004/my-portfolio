@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 
 interface ExperienceItem {
   position: string;
@@ -20,6 +21,59 @@ interface ExperienceItem {
 }
 
 const experiences: ExperienceItem[] = [
+  {
+    position: 'Co-Founder',
+    company: 'Cynos Nexus',
+    period: 'Feb 2025 - Present',
+    location: 'Noida, India',
+    description: [
+      'Spearheaded the development of an AI-powered real estate ecosystem using Next.js 15, Nest.js 11, Prisma, PostgreSQL, Apollo GraphQL with real-time Subscriptions, Redis, PubSub and Google Cloud Compute Engine & Cloud SQL, enabling seamless property transactions in Noida and driving 30% user engagement growth through real-time, data-driven features.',
+      'Engineered Incremental Static Regeneration (ISR) with on-demand rendering, achieving 121.76ms load time for property pages (cached)—58% faster than Housing.com (400ms)—while ensuring fresh data with 60-second revalidation',
+      'Developed a dynamic caching strategy with Vercel Edge Network, reducing server load by 90% (cached requests) and maintaining performance within Vercel free tier limits (0.672 GB-hours/day for 10,000 users/day).',
+      'Integrated Apollo GraphQL for efficient data fetching, minimising payload size to 2.2 KB (compressed) for 10 properties, ensuring <300ms load time on 10 Mbps 4G connections in Noida',
+      'Containerized the application with Docker, orchestrated CI/CD pipelines with GitHub Actions, and configured Nginx for reverse proxy and load balancing, cutting deployment time by 50% (from 10 minutes to 5 minutes)',
+      'Integrated WhatsApp Business API for seamless template creation and approval, messaging, webhooks, enabling agents to launch 1-click campaigns to 10,000+ buyers, driving 50-100 daily clicks with 5% conversion, 20% higher engagement than manual outreach.',
+      'Engineered Meta Marketing API with DeepSeek AI to auto-optimize ad campaigns for Noida’s ₹20L-₹50L real estate market, slashing agent setup time 80% (1 hour to 12 minutes) and lifting lead quality 15% by targeting NCR’s middle-class buyer hotspots (e.g. Sector 62, Sector 137, Alpha 2).',
+      'Implemented Google Cloud Vision API to help users seed their client database in the app by scanning their contact diaries or documents with their smartphone camera.',
+      'Integrated the XLSX to help Bulk client seeding using the Microsoft Excel import from their current data present in their sheets.',
+      'Maximized SEO performance by implementing advanced techniques, like JSON-LD schema markup data, Open Graph tags, and dynamic meta tags, optimizing for long-tail Noida keywords (e.g.,“best 2BHK flats in Sector 62”), achieving a 25% increase in organic click-through rates.',
+      'Integrated Razorpay for automated payment processing, enabling seamless subscription payments (₹1999/month) with a 100% transaction success rate and zero payment failures, handling all the payment events using the Webhooks & BullMQ workers.',
+      'Fortified security with a robust RBAC system and HTTP-only cookies, ensuring secure access for agents, buyers, and admins with zero security breaches across 10,000+ user sessions.',
+      'Integrated Firebase Cloud Messaging (FCM) for real-time notifications, enabling instant updates on property changes (e.g., price, status), boosting user engagement by 30% through timely alerts.',
+      'Optimized for low-resource deployment on Vercel free tier, leveraging Redis caching (7.2 MB for 10,000 properties) to handle 100 concurrent users with 50% CPU usage on a 4GB RAM VM.',
+      'Automated WhatsApp and Email marketing campaigns using Resend and Amazon SES, driving 50-100 clicks/day with a 5% conversion rate for agent signups, achieving 20% user engagement growth.'
+    ],
+    skills: [
+      'Next.js',
+      'Nest.js',
+      'Prisma',
+      'Redis',
+      'Apollo GraphQL',
+      'Google Cloud',
+      'Vercel',
+      'React',
+      'TypeScript',
+      'PostgreSQL',
+      'Progressive Web App',
+      'Redis',
+      'Incremental Static Regeneration',
+      'dynamic caching',
+      'Nginx',
+      'CI/CD',
+      'Vision API',
+      'XLSX',
+      'SEO',
+      'JSON-LD schema',
+      'BullMQ',
+      'Webhooks',
+      'RBAC',
+      'WhatsApp Business API',
+      'Meta Marketing API',
+      'DeepSeek AI',
+      'Firebase Cloud Messaging'
+    ],
+    images: ['/caresept.png'],
+  },
   {
     position: 'Software Engineer',
     company: 'Caresept',
@@ -140,6 +194,15 @@ const experiences: ExperienceItem[] = [
 ];
 
 const Experience: React.FC = () => {
+  // Extract all unique technical skills across all experiences
+  const allTechnicalSkills = useMemo(() => {
+    const skillsSet = new Set<string>();
+    experiences.forEach(exp => {
+      exp.skills.forEach(skill => skillsSet.add(skill));
+    });
+    return Array.from(skillsSet);
+  }, []);
+
   return (
     <section
       id="experience"
@@ -165,7 +228,12 @@ const Experience: React.FC = () => {
           <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/0 via-blue-500 to-blue-500/0 hidden lg:block" />
 
           {experiences.map((exp, index) => (
-            <TimelineItem key={index} experience={exp} index={index} />
+            <TimelineItem 
+              key={index} 
+              experience={exp} 
+              index={index} 
+              allTechnicalSkills={allTechnicalSkills}
+            />
           ))}
         </div>
       </div>
@@ -173,9 +241,14 @@ const Experience: React.FC = () => {
   );
 };
 
-const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
+const TimelineItem: React.FC<{ 
+  experience: ExperienceItem; 
+  index: number;
+  allTechnicalSkills: string[];
+}> = ({
   experience,
   index,
+  allTechnicalSkills,
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
@@ -209,7 +282,7 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div>
               <CardTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400">
-                {experience.position}
+               {experience.position}
               </CardTitle>
               <CardDescription className="text-lg">
                 <span className="font-semibold text-gray-700 dark:text-gray-300">
@@ -231,17 +304,6 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
                 </div>
               </CardDescription>
             </div>
-            {experience.proofLink && (
-              <Link
-                href={experience.proofLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 group"
-              >
-                View Proof
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </Link>
-            )}
           </div>
         </CardHeader>
 
@@ -259,8 +321,8 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
                     '<span class="font-bold text-blue-600 dark:text-blue-400">$1</span>'
                   );
 
-                  // Highlight technical skills
-                  const technicalTerms = experience.skills.join('|');
+                  // Highlight technical skills using ALL technical skills from all experiences
+                  const technicalTerms = allTechnicalSkills.join('|');
                   const withTechHighlights = metrics.replace(
                     new RegExp(`(${technicalTerms})`, 'gi'),
                     '<span class="font-medium text-emerald-600 dark:text-emerald-400">$1</span>'
@@ -268,6 +330,9 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
 
                   // Highlight impact keywords and action verbs
                   const impactKeywords = [
+                    'Integrated',
+                    'Maximized',
+                    'Containerized',
                     'Architected',
                     'Engineered',
                     'Spearheaded',
@@ -321,7 +386,7 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
               </ul>
             </div>
 
-            <div>
+            {/* <div>
               <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200">
                 Technologies Used:
               </h4>
@@ -342,7 +407,7 @@ const TimelineItem: React.FC<{ experience: ExperienceItem; index: number }> = ({
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* <Carousel images={experience.images} /> */}
           </div>

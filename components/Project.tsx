@@ -27,7 +27,7 @@ interface ProjectImage {
 
 interface Project {
   title: string;
-  type: 'landing' | 'fullstack' | 'backend';
+  type: 'fullstack' | 'backend';
   description: string[];
   techStack: string[];
   images: ProjectImage[];
@@ -43,45 +43,32 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Aven CRM - Real Estate CRM System',
+    title: 'Cynos Nexus - Real Estate AI Growth Engine',
     type: 'fullstack',
     description: [
-      'Built a complete CRM solution with role-based access control',
-      'Implemented real-time notifications using WebSockets and Redis',
-      'Integrated payment processing and invoice generation with Stripe',
-      'Automated email marketing campaigns',
-      'Built analytics dashboard with real-time data visualization',
+      
     ],
     techStack: [
-      'Next.js',
-      'TypeScript',
-      'React',
-      'PostgreSQL',
-      'Prisma',
-      'Redis',
-      'AWS',
-      'Stripe',
-      'Docker',
-      'CI/CD',
+      
     ],
     images: [
-      { url: '/projects/aven-1.webp', alt: 'CRM Dashboard' },
-      { url: '/projects/aven-2.webp', alt: 'Analytics View' },
+      { url: '/projects/cynos-2.webp', alt: 'CRM Dashboard' },
+      { url: '/projects/cynos-1.webp', alt: 'Analytics View' },
+      { url: '/projects/cynos-3.webp', alt: 'Analytics View' },
     ],
-    githubLink: 'https://github.com/awesome-pro/estate',
-    previewLink: 'https://avencrm.com',
+    githubLink: 'https://github.com/awesome-pro/cynos',
+    previewLink: 'https://cynosnexus.com',
     highlights: ['99.9% Uptime', '50ms Average Response Time', '10k+ Daily Active Users'],
     isPrivate: true,
   },
   {
-    title: 'Finance - The Finance Dashboard',
+    title: 'myproposal.love - The AI Proposal Generator',
     type: 'fullstack',
     description: [
-      'Built a complete CRM solution with role-based access control',
-      'Implemented real-time notifications using WebSockets and Redis',
-      'Integrated payment processing and invoice generation with Stripe',
-      'Automated email marketing campaigns',
-      'Built analytics dashboard with real-time data visualization',
+      'Designed and implemented an AI-powered romantic proposal generator',
+      'Integrated Amazon SES & Resend for email notifications',
+      'Built secure authentication system with NextAuth.js adding Google and Email authentication',
+      'Implemented caching strategy reducing response time by 60%',
     ],
     techStack: [
       'Next.js',
@@ -96,93 +83,12 @@ const projects: Project[] = [
       'CI/CD',
     ],
     images: [
-      { url: '/projects/finance-1.webp', alt: 'CRM Dashboard' },
-      { url: '/projects/finance-2.webp', alt: 'Analytics View' },
+      { url: '/projects/love-1.webp', alt: 'Landing Page' },
+      { url: '/projects/love-2.webp', alt: 'Proposal View' },
     ],
-    githubLink: 'https://github.com/example/finance-dashboard',
-    previewLink: 'https://financedashboard.com',
+    githubLink: 'https://github.com/awesome-pro/proposal',
+    previewLink: 'https://myproposal.love',
     highlights: ['99.9% Uptime', '50ms Average Response Time', '10k+ Daily Active Users'],
-  },
-  {
-    title: 'Rogil - The SuperAPP platform',
-    type: 'landing',
-    description: [],
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'NextUI'],
-    images: [{ url: '/rogil.webp', alt: 'Rogil SuperAPP Landing Page' }],
-    githubLink: 'https://github.com/awesome-pro/rogil',
-    previewLink: 'https://rogil.vercel.app/',
-  },
-  {
-    title: 'Pixa AI',
-    type: 'landing',
-    description: [],
-    techStack: ['HTML', 'JavaScript', 'Tailwind CSS'],
-    images: [{ url: '/projects/pixa-1.webp', alt: 'Pixa AI Landing Page' }],
-    githubLink: 'https://github.com/awesome-pro/pixa-ai',
-    previewLink: 'https://pixapage.netlify.app/#',
-  },
-  {
-    title: 'SaaSy - The SaaS Platform',
-    type: 'landing',
-    description: [],
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/sassy.webp', alt: 'SaaSy Landing Page' }],
-    githubLink: 'https://github.com/awesome-pro/saasy',
-    previewLink: 'https://saasy-dark.netlify.app/',
-  },
-  {
-    title: 'Travelog - The Travel Blog',
-    type: 'landing',
-    description: [],
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/travelog.webp', alt: 'Travelog Landing Page' }],
-    githubLink: 'https://github.com/awesome-pro/Travel-Landing-Page',
-    previewLink: 'https://travlog-landing-page-zeta.vercel.app/',
-  },
-  {
-    title: 'CourseSpace - The Online Learning Platform',
-    type: 'landing',
-    description: [],
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/coursespace-2.webp', alt: 'CourseSpace Landing Page' }],
-    githubLink: 'https://github.com/awesome-pro/course-space',
-    previewLink: 'https://coursespace.com',
-  },
-  {
-    title: 'Caresept - The CRM Provider',
-    type: 'landing',
-    description: [],
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/caresept.webp', alt: 'Caresept Landing Page' }],
-    githubLink: 'https://github.com/awesome-pro/careapp',
-    previewLink: 'https://caresept-landing-page.vercel.app/',
-  },
-  {
-    title: 'Brick - The Real Estate Property ',
-    type: 'landing',
-    description: [],
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'CuiCui UI'],
-    images: [{ url: '/brick-2.webp', alt: 'Brick Landing Page' }],
-    githubLink: 'https://github.com/awesome-pro/brick-landing',
-    previewLink: 'https://brickproperty.netlify.app/',
-  },
-  {
-    title: 'Bistro - The Restaurant',
-    type: 'landing',
-    description: [],
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/bistro-1.webp', alt: 'Bistro Landing Page' }],
-    githubLink: 'https://github.com/awesome-pro/bistro-landing',
-    previewLink: 'https://bistro-rest.netlify.app/',
-  },
-  {
-    title: 'Chat Origin - The Chat App',
-    type: 'landing',
-    description: [],
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    images: [{ url: '/projects/chat-origin.webp', alt: 'Chat Origin Landing Page' }],
-    githubLink: 'https://github.com/awesome-pro/chat-origin-landing',
-    previewLink: 'https://chatorigin.netlify.app/',
   },
   {
     title: 'Aarogya - The Healthcare Platform',
@@ -244,7 +150,7 @@ const projects: Project[] = [
 ];
 
 const ProjectsSection = () => {
-  const [filter, setFilter] = useState<'fullstack' | 'landing' | 'backend'>('landing');
+  const [filter, setFilter] = useState<'fullstack' | 'backend'>('fullstack');
 
   const filteredProjects = projects.filter(project => !filter || project.type === filter);
 
@@ -270,7 +176,7 @@ const ProjectsSection = () => {
 
         {/* Animated Filter Buttons */}
         <div className="flex justify-center gap-4 mb-12">
-          {['fullstack', 'landing', 'backend'].map(type => (
+          {['fullstack', 'backend'].map(type => (
             <motion.button
               key={type}
               onClick={() => setFilter(type as typeof filter)}
@@ -300,7 +206,6 @@ const ProjectsSection = () => {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 {project.type === 'fullstack' && <FullStackCard project={project} />}
-                {project.type === 'landing' && <LandingPageCard project={project} />}
                 {project.type === 'backend' && <BackendCard project={project} />}
               </motion.div>
             ))}
@@ -474,116 +379,6 @@ const FullStackCard: React.FC<{ project: Project }> = ({ project }) => {
   );
 };
 
-const LandingPageCard: React.FC<{ project: Project }> = ({ project }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <motion.div
-      className="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-500"
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ y: -5 }}
-    >
-      {/* Image Container */}
-      <div className="aspect-[16/9] w-full relative overflow-hidden">
-        <Image
-          src={project.images[0].url}
-          alt={project.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transform transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
-
-        {/* Project Type Badge */}
-        <div className="absolute top-4 right-4">
-          <Badge
-            variant="secondary"
-            className="bg-blue-500 text-white px-3 py-1 text-xs uppercase tracking-wider backdrop-blur-sm"
-          >
-            {project.type}
-          </Badge>
-        </div>
-      </div>
-
-      {/* Content Container - Always visible but transforms on hover */}
-      <div className="absolute inset-0 flex flex-col justify-end p-6 transition-transform duration-300">
-        <motion.div
-          animate={{ y: isHovered ? 0 : 60 }}
-          transition={{ duration: 0.3 }}
-          className="space-y-4"
-        >
-          {/* Title and Tech Stack - Always Visible */}
-          <div className="space-y-2">
-            <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
-              {project.title}
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {project.techStack.slice(0, 3).map((tech, i) => (
-                <Badge
-                  key={i}
-                  variant="secondary"
-                  className="bg-white/10 text-white text-xs backdrop-blur-sm border border-white/20"
-                >
-                  {tech}
-                </Badge>
-              ))}
-              {project.techStack.length > 3 && (
-                <Badge
-                  variant="secondary"
-                  className="bg-white/10 text-white text-xs backdrop-blur-sm border border-white/20"
-                >
-                  +{project.techStack.length - 3} more
-                </Badge>
-              )}
-            </div>
-          </div>
-
-          {/* Description and Links - Visible on Hover/Mobile */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.2 }}
-            className="space-y-4"
-          >
-            {project.description.length > 0 && (
-              <p className="text-gray-200 text-sm line-clamp-2">{project.description[0]}</p>
-            )}
-            <div className="flex items-center gap-4">
-              {project.githubLink && (
-                <Link
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white hover:text-blue-300 transition-colors text-sm"
-                >
-                  <FaGithub className="h-5 w-5" />
-                  <span className="hidden md:inline">Source Code</span>
-                </Link>
-              )}
-              {project.previewLink && (
-                <Link
-                  href={project.previewLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white hover:text-blue-300 transition-colors text-sm group"
-                >
-                  <ExternalLink className="h-5 w-5" />
-                  <span className="hidden md:inline group-hover:underline">Live Preview</span>
-                </Link>
-              )}
-            </div>
-          </motion.div>
-        </motion.div>
-      </div>
-
-      {/* Mobile Touch Indicator */}
-      <div className="absolute bottom-2 right-2 md:hidden">
-        <div className="w-1.5 h-1.5 bg-white/50 rounded-full animate-pulse" />
-      </div>
-    </motion.div>
-  );
-};
 
 const BackendCard: React.FC<{ project: Project }> = ({ project }) => {
   const [activeTab, setActiveTab] = useState<'overview' | 'api' | 'metrics'>('overview');

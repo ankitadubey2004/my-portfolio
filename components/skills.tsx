@@ -29,17 +29,8 @@ const skillCategories = [
         experience: '1 years',
         details:
           'Advanced state management patterns, Custom Hooks architecture, Render optimization, Suspense patterns, concurrent features. Deep expertise in performance profiling and bundle optimization.',
-        projects: 'Financial Dashboards, Real-time Analytics',
+        projects: 'Large-scale E-commerce, Enterprise CRM',
         icon: '/skills/react.svg',
-      },
-      {
-        name: 'TypeScript',
-        level: 'Expert',
-        experience: '1 years',
-        details:
-          'Advanced type system architecture, Generic type patterns, Custom type utilities, Conditional types, Module augmentation. Build-time type checking and automated type generation.',
-        projects: 'Enterprise SDK Development, API Frameworks',
-        icon: '/skills/typescript.svg',
       },
     ],
   },
@@ -48,13 +39,13 @@ const skillCategories = [
     icon: <Server className="w-6 h-6" />,
     skills: [
       {
-        name: 'System Design',
+        name: 'Nest.js',
         level: 'Advanced',
         experience: '3 Months',
         details:
-          'Distributed systems architecture, Event-driven design, CQRS patterns, Message queues, Rate limiting, Circuit breakers. Expertise in building highly available, fault-tolerant systems.',
-        projects: 'High-load Payment Systems, Trading Platforms',
-        icon: '/skills/design.png',
+          'Goroutines optimization, Channel patterns, Memory management, Custom runtime schedulers, Advanced concurrency patterns, High-performance networking.',
+        projects: 'Microservices Architecture, Trading Systems',
+        icon: '/skills/nest.png',
       },
       {
         name: 'FastAPI',
@@ -65,15 +56,7 @@ const skillCategories = [
         projects: 'Real-time Analytics, IoT Platforms',
         icon: '/skills/fastapi.svg',
       },
-      {
-        name: 'Golang',
-        level: 'Advanced',
-        experience: '3 Months',
-        details:
-          'Goroutines optimization, Channel patterns, Memory management, Custom runtime schedulers, Advanced concurrency patterns, High-performance networking.',
-        projects: 'Microservices Architecture, Trading Systems',
-        icon: '/skills/go.svg',
-      },
+      
     ],
   },
   {
@@ -120,13 +103,12 @@ const skillCategories = [
         icon: '/skills/docker.svg',
       },
       {
-        name: 'DevOps Automation',
+        name: 'Google Cloud',
         level: 'Intermediate',
         experience: '3 Months',
-        details:
-          'GitOps workflows, Infrastructure as Code, Automated deployment pipelines, Chaos engineering, Blue-green deployments, Canary releases.',
+        details: 'Compute Engine, Cloud SQL, Cloud Storage',
         projects: 'CI/CD Platforms, Cloud Infrastructure, Container orchestration',
-        icon: '/skills/kubernetes.svg',
+        icon: '/skills/gcloud.png',
       },
       {
         name: 'AWS',
