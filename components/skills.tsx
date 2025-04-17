@@ -17,16 +17,16 @@ const skillCategories = [
       {
         name: 'Next.js',
         level: 'Expert',
-        experience: '1 years',
+        experience: '1.5 years',
         details:
-          'Advanced Server Components, Streaming SSR, React Server Actions, Edge Runtime optimization, App Router architecture, and advanced caching strategies. Expertise in building enterprise-grade micro-frontends.',
+          'Streaming SSR, React Server Actions, Edge Runtime, caching strategies.',
         projects: 'Large-scale E-commerce, Enterprise CRM',
         icon: '/skills/nextjs.svg',
       },
       {
         name: 'React.js',
         level: 'Expert',
-        experience: '1 years',
+        experience: '1.5 years',
         details:
           'Advanced state management patterns, Custom Hooks architecture, Render optimization, Suspense patterns, concurrent features. Deep expertise in performance profiling and bundle optimization.',
         projects: 'Large-scale E-commerce, Enterprise CRM',
@@ -41,16 +41,16 @@ const skillCategories = [
       {
         name: 'Nest.js',
         level: 'Advanced',
-        experience: '3 Months',
+        experience: '1.5 years',
         details:
-          'Goroutines optimization, Channel patterns, Memory management, Custom runtime schedulers, Advanced concurrency patterns, High-performance networking.',
+          'Runtime schedulers, Concurrency patterns, High-performance networking,  CQRS, Event Sourcing',
         projects: 'Microservices Architecture, Trading Systems',
         icon: '/skills/nest.png',
       },
       {
         name: 'FastAPI',
         level: 'Expert',
-        experience: '6 Months',
+        experience: '1.5 years',
         details:
           'Async IO optimization, WebSocket implementations, Custom middleware architecture, OpenAPI integration, Advanced dependency injection patterns, High-performance data streaming.',
         projects: 'Real-time Analytics, IoT Platforms',
@@ -68,7 +68,7 @@ const skillCategories = [
         level: 'Intermediate',
         experience: '1+ years',
         details:
-          'Advanced query optimization, Partitioning strategies, Replication architectures, ACID compliance patterns, Custom indexing strategies.',
+          'Query optimization, Partitioning strategies, Replication architectures, ACID compliance patterns, Sharding.',
         projects: 'Big Data Analytics',
         icon: '/skills/postgresql.svg',
       },
@@ -97,7 +97,7 @@ const skillCategories = [
       {
         name: 'Docker',
         level: 'Intermediate',
-        experience: '~1 years',
+        experience: '1 year',
         details: 'Container orchestration, multi-stage builds',
         projects: 'Microservices deployment',
         icon: '/skills/docker.svg',
@@ -105,7 +105,7 @@ const skillCategories = [
       {
         name: 'Google Cloud',
         level: 'Intermediate',
-        experience: '3 Months',
+        experience: '1 year',
         details: 'Compute Engine, Cloud SQL, Cloud Storage',
         projects: 'CI/CD Platforms, Cloud Infrastructure, Container orchestration',
         icon: '/skills/gcloud.png',
@@ -113,7 +113,7 @@ const skillCategories = [
       {
         name: 'AWS',
         level: 'Advanced',
-        experience: '1 years',
+        experience: '1 year',
         details: 'EC2, S3, Lambda, ECS deployment',
         projects: 'Cloud infrastructure',
         icon: '/skills/aws.svg',
@@ -251,42 +251,6 @@ const SkillsSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Domain Expertise Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-white to-white/90 dark:from-gray-800 dark:to-gray-800/90 inline-block">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent" />
-            <div className="relative p-6">
-              <h4 className="text-lg font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300">
-                Domain Expertise
-              </h4>
-              <div className="flex flex-wrap justify-center gap-3">
-                {[
-                  'Enterprise System Architecture',
-                  'High-Performance Computing',
-                  'Distributed Systems',
-                  'FinTech Solutions',
-                  'Real-time Processing',
-                  'Scalable Infrastructure',
-                ].map(domain => (
-                  <Badge
-                    key={domain}
-                    variant="default"
-                    className="px-4 py-2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300 text-white"
-                  >
-                    {domain}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          </Card>
-        </motion.div>
       </div>
     </section>
   );
