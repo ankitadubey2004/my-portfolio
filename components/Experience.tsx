@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin, ExternalLink, Cloud } from 'lucide-react';
 import Image from 'next/image';
 
 interface ExperienceItem {
@@ -22,26 +22,18 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    position: 'Co-Founder',
+    position: 'Software Engineer',
     company: 'Cynos Nexus',
-    period: 'Feb 2025 - Present',
+    period: 'Jan 2025 - Present',
     location: 'Noida, India',
     description: [
-      'Spearheaded the development of an AI-powered real estate ecosystem using Next.js 15, Nest.js 11, Prisma, PostgreSQL, Apollo GraphQL with real-time Subscriptions, Redis, PubSub and Google Cloud Compute Engine & Cloud SQL, enabling seamless property transactions in Noida and driving 30% user engagement growth through real-time, data-driven features.',
-      'Engineered Incremental Static Regeneration (ISR) with on-demand rendering, achieving 121.76ms load time for property pages (cached)—58% faster than Housing.com (400ms)—while ensuring fresh data with 60-second revalidation',
-      'Developed a dynamic caching strategy with Vercel Edge Network, reducing server load by 90% (cached requests) and maintaining performance within Vercel free tier limits (0.672 GB-hours/day for 10,000 users/day).',
-      'Integrated Apollo GraphQL for efficient data fetching, minimising payload size to 2.2 KB (compressed) for 10 properties, ensuring <300ms load time on 10 Mbps 4G connections in Noida',
-      'Containerized the application with Docker, orchestrated CI/CD pipelines with GitHub Actions, and configured Nginx for reverse proxy and load balancing, cutting deployment time by 50% (from 10 minutes to 5 minutes)',
-      'Integrated WhatsApp Business API for seamless template creation and approval, messaging, webhooks, enabling agents to launch 1-click campaigns to 10,000+ buyers, driving 50-100 daily clicks with 5% conversion, 20% higher engagement than manual outreach.',
-      'Engineered Meta Marketing API with DeepSeek AI to auto-optimize ad campaigns for Noida’s ₹20L-₹50L real estate market, slashing agent setup time 80% (1 hour to 12 minutes) and lifting lead quality 15% by targeting NCR’s middle-class buyer hotspots (e.g. Sector 62, Sector 137, Alpha 2).',
-      'Implemented Google Cloud Vision API to help users seed their client database in the app by scanning their contact diaries or documents with their smartphone camera.',
-      'Integrated the XLSX to help Bulk client seeding using the Microsoft Excel import from their current data present in their sheets.',
-      'Maximized SEO performance by implementing advanced techniques, like JSON-LD schema markup data, Open Graph tags, and dynamic meta tags, optimizing for long-tail Noida keywords (e.g.,“best 2BHK flats in Sector 62”), achieving a 25% increase in organic click-through rates.',
-      'Integrated Razorpay for automated payment processing, enabling seamless subscription payments (₹1999/month) with a 100% transaction success rate and zero payment failures, handling all the payment events using the Webhooks & BullMQ workers.',
-      'Fortified security with a robust RBAC system and HTTP-only cookies, ensuring secure access for agents, buyers, and admins with zero security breaches across 10,000+ user sessions.',
-      'Integrated Firebase Cloud Messaging (FCM) for real-time notifications, enabling instant updates on property changes (e.g., price, status), boosting user engagement by 30% through timely alerts.',
-      'Optimized for low-resource deployment on Vercel free tier, leveraging Redis caching (7.2 MB for 10,000 properties) to handle 100 concurrent users with 50% CPU usage on a 4GB RAM VM.',
-      'Automated WhatsApp and Email marketing campaigns using Resend and Amazon SES, driving 50-100 clicks/day with a 5% conversion rate for agent signups, achieving 20% user engagement growth.'
+      'Developed core features of an AI-powered real estate ecosystem using Next.js 15, Nest.js 11, Prisma, PostgreSQL, Apollo GraphQL with Subscriptions, Redis, PubSub, Firebase Cloud Messaging, Razorpay, Google Cloud & AWS.',
+      'Collaborated with a 3-person team to secure 10 clients in just 2 months, leading to ₹25000 MRR.',
+      'Implemented Incremental Site Regeneration with on-demand rendering & dynamic caching, achieving 221ms load time.',
+      'Automated deployment infrastructure using Docker, GitHub Actions for CICD, and Nginx for reverse proxy/load balancing',
+      'Engineered WhatsApp, Meta, Email Marketing & Google Ads with DeepSeek AI to auto-optimise ad campaigns.',
+      'Implemented Google Cloud Vision API & XLSX to help users seed their client database in the app by scanning their contact diaries with their smartphone camera or using the Microsoft Excel import.',
+      'Integrated Razorpay for automated payment processing, enabling seamless subscription payments.'
     ],
     skills: [
       'Next.js',
@@ -80,15 +72,13 @@ const experiences: ExperienceItem[] = [
     period: 'Sept 2024 - Dec 2024',
     location: 'Istanbul, Turkey',
     description: [
-      'Architected and delivered end-to-end CRM solutions driving business growth across European and Middle Eastern markets',
-      'Spearheaded Google OAuth integration in FastAPI, resulting in 20% boost in user acquisition and streamlined onboarding',
-      'Engineered high-performance Document Editor using Tiptap in Next.js, achieving 30% increase in user engagement metrics',
-      'Optimized data processing by implementing bulk CSV upload with csv-parser and Celery worker, reducing processing time by 40%',
-      'Developed robust email automation system using MailGun, reducing email delivery time by 50%',
-      'Led Progressive Web App implementation ensuring cross-platform accessibility and offline functionality',
-      'Executed strategic SEO optimizations resulting in 45% improvement in organic traffic and search rankings',
-      'Innovated comprehensive Event & Calendar Management System enhancing user scheduling efficiency by 25%',
-      'Championed responsive design and accessibility improvements, achieving WCAG 2.1 compliance',
+      'Worked with cross-functional teams to integrate OAuth, improving user onboarding by 20%.',
+      'Engineered high-performance Document Editor using Tiptap, MUI in Next.js, achieving a 30% increase in user engagement metrics.',
+      'Optimised data processing by implementing bulk CSV upload & processing with csv-parser and Celery worker, reducing processing time by 40%.',
+      'Established a CICD pipeline with GitHub Actions and Docker on an AWS EC2 machine.',
+      'Led Progressive Web App implementation, ensuring cross-platform accessibility and offline functionality',
+      'Executed strategic SEO optimisations like JSON-LD schema markup data, Open Graph tags, and dynamic meta tags, resulting in a 45% improvement in organic traffic and search rankings.',
+      'Innovated comprehensive Event & Calendar Management System enhancing user scheduling efficiency by 25%.'
     ],
     skills: [
       'Next.js',
@@ -108,50 +98,14 @@ const experiences: ExperienceItem[] = [
     images: ['/caresept.png'],
   },
   {
-    position: 'Freelance Software Engineer',
-    company: 'Aven Technologies',
-    period: 'Nov 2024 - Dec 2024',
-    location: 'Remote',
-    description: [
-      'Pioneered custom CRM development for high-value Real Estate markets in Dubai, Canada, and USA',
-      'Architected scalable CRM platform from ground up utilizing Next.js, Node.js, Express, PostgreSQL, achieving 99.9% uptime',
-      'Engineered enterprise-grade email automation system using Gmail API, processing 50,000+ emails monthly',
-      'Established robust CI/CD pipeline with GitHub Actions and Docker, reducing deployment time by 70%',
-      'Orchestrated AWS EC2 deployment with auto-scaling, capacity planning, and load handling, ensuring high availability',
-      'Implemented advanced SEO strategies resulting in 200% increase in organic traffi',
-      'Developed military-grade authentication system using JWT and NextAuth.js, ensuring zero security breaches',
-      'Designed intuitive Event Management system reducing scheduling conflicts by 90%',
-      'Created dynamic Template Editor enabling 60% faster document creation',
-      'Delivered mobile-first responsive design achieving 95% user satisfaction rate',
-    ],
-    skills: [
-      'Next.js',
-      'React',
-      'Node.js',
-      'Express',
-      'MongoDB',
-      'Shadcn UI',
-      'Prisma',
-      'rechart.js',
-      'Gmail API',
-      'JWT',
-      'NextAuth.js',
-      'Docker',
-      'GitHub Actions',
-      'AWS EC2',
-    ],
-    images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
-    // proofLink: 'https://example.com/avencrm-proof',
-  },
-  {
     position: 'Open Source Contributor',
     company: 'NextUI',
     period: 'June 2024 - Aug 2024',
     location: 'Remote',
     description: [
-      'Secured direct offer from CEO after delivering exceptional contributions to core framework',
-      'Spearheaded 7+ major feature enhancements, driving 40% improvement in component adoption rate',
-      'Resolved 10+ critical bugs in Calendar and Pagination components, achieving 99.9% stability',
+      'Achieved a personal offer from the CEO to join NextUI after making significant contributions (35 pull requests).',
+      'User Experience Enhancement: Resolved 10+ bugs in essential components like Calendar, Table and Pagination, leading to directly improving the product’s stability and usability.',
+      'Enhanced Developer Adoption & Product Reach: Delivered 7+ feature enhancements that significantly improved component flexibility and extensibility.',
       'Contributed to enterprise-grade reusable UI components used by 1000+ developers globally',
     ],
     skills: [
@@ -169,13 +123,12 @@ const experiences: ExperienceItem[] = [
   {
     position: 'Software Development Intern',
     company: 'SkilledUp Intelligence Pvt. Ltd.',
-    period: 'March 2024 - June 2024',
+    period: 'Feb 2024 - May 2024',
     location: 'Bangalore, India',
     description: [
-      'Engineered core features of enterprise Learning Management System serving 5000+ users',
-      'Implemented secure authentication system using JWT and NextAuth.js, achieving zero security incidents',
-      'Optimized UI/UX resulting in 35% reduction in user learning curve',
-      'Developed high-performance Database Query Engine handling 10,000+ daily queries',
+      'Engineered core features of the enterprise Learning Management System serving 500+ users.',
+      'Implemented a secure authentication system using JWT and NextAuth.js, achieving zero security incidents',
+      'Developed a Query Engine based on MongoDB and Express, handling ~10,000 daily queries.',
     ],
     skills: [
       'Next.js',
