@@ -27,13 +27,15 @@ const experiences: ExperienceItem[] = [
     period: 'Jan 2025 - Present',
     location: 'Noida, India',
     description: [
-      'Developed core features of an AI-powered real estate ecosystem using Next.js 15, Nest.js 11, Prisma, PostgreSQL, Apollo GraphQL with Subscriptions, Redis, PubSub, Firebase Cloud Messaging, Razorpay, Google Cloud & AWS.',
+      'Developed core features of an AI-powered real estate ecosystem using Next.js 15, Nest.js 11, Prisma, PostgreSQL, Apollo GraphQL, Redis, Google Cloud & AWS.',
       'Collaborated with a 3-person team to secure 10 clients in just 2 months, leading to ₹25000 MRR.',
+      'Implemented the AI knowledge base service, using FastAPI, Pinecone, Langchain, Hugging Face & DeepSeek AI.',
       'Implemented Incremental Site Regeneration with on-demand rendering & dynamic caching, achieving 221ms load time.',
       'Automated deployment infrastructure using Docker, GitHub Actions for CICD, and Nginx for reverse proxy/load balancing',
       'Engineered WhatsApp, Meta, Email Marketing & Google Ads with DeepSeek AI to auto-optimise ad campaigns.',
       'Implemented Google Cloud Vision API & XLSX to help users seed their client database in the app by scanning their contact diaries with their smartphone camera or using the Microsoft Excel import.',
-      'Integrated Razorpay for automated payment processing, enabling seamless subscription payments.'
+      'Integrated Razorpay for automated payment processing, enabling seamless subscription payments.',
+      'Implemented real-time notifications using the GraphQL subscriptions (WebSockets) & Firebase Cloud Messaging.'
     ],
     skills: [
       'Next.js',
@@ -72,9 +74,9 @@ const experiences: ExperienceItem[] = [
     period: 'Sept 2024 - Dec 2024',
     location: 'Istanbul, Turkey',
     description: [
-      'Worked with cross-functional teams to integrate OAuth, improving user onboarding by 20%.',
-      'Engineered high-performance Document Editor using Tiptap, MUI in Next.js, achieving a 30% increase in user engagement metrics.',
-      'Optimised data processing by implementing bulk CSV upload & processing with csv-parser and Celery worker, reducing processing time by 40%.',
+      'Collaborated with cross-functional teams to integrate OAuth in FastAPI, improving user onboarding & UX by 20%.',
+      'Engineered high-performance Rich Document Editor using WeasyPrint, Tiptap, MUI in Next.js, achieving a 30% increase in user engagement metrics.',
+      'Optimised data processing via bulk CSV upload & processing using Celery worker, reducing processing time by 40%.',
       'Established a CICD pipeline with GitHub Actions and Docker on an AWS EC2 machine.',
       'Led Progressive Web App implementation, ensuring cross-platform accessibility and offline functionality',
       'Executed strategic SEO optimisations like JSON-LD schema markup data, Open Graph tags, and dynamic meta tags, resulting in a 45% improvement in organic traffic and search rankings.',
@@ -142,7 +144,6 @@ const experiences: ExperienceItem[] = [
       'Docker',
     ],
     images: ['/placeholder.svg?height=300&width=400', '/placeholder.svg?height=300&width=400'],
-    // proofLink: 'https://example.com/skilledup-internship-certificate',
   },
 ];
 
@@ -283,8 +284,11 @@ const TimelineItem: React.FC<{
 
                   // Highlight impact keywords and action verbs
                   const impactKeywords = [
+                    'Collaborated',
+                    'Executed',
                     'Integrated',
                     'Maximized',
+                    'Optimised',
                     'Containerized',
                     'Architected',
                     'Engineered',
