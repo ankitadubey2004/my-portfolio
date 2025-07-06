@@ -21,7 +21,7 @@ function Portfolio() {
   </span>
 
   <p className='text-xs'>
-    Don't forget to star 
+    Don&apos;t forget to star this repository
   </p>
       </section>
   )

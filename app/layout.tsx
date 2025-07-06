@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/header';
 import { ThemeProvider } from '@/components/theme-provider';
 import StructuredData from './structured-data';
+import Script from 'next/script';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -136,6 +137,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+      <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-F68MYYBRLW`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-F68MYYBRLW');
+          `}
+        </Script>
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
