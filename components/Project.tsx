@@ -250,7 +250,7 @@ const ProjectsSection = () => {
             Featured Projects
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400">
-            Showcasing 30+ production-ready applications and solutions
+            Showcasing production-ready applications and solutions
           </p>
         </motion.div>
 
