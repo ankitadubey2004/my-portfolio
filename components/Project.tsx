@@ -43,23 +43,70 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Cynos Nexus - Real Estate AI Growth Engine',
+    title: 'UPSCprep - UPSC Exam Preparation Platform',
     type: 'fullstack',
     description: [
-      
+      'Developed a comprehensive UPSC exam preparation platform using Next.js 15, Nest.js 11, Prisma, PostgreSQL, Redis, AWS.',
+      'Automated deployment infrastructure using Docker, GitHub Actions for CICD, and Nginx for reverse proxy/load balancing',
+      'Integrated Razorpay for automated payment processing, enabling seamless subscription payments.',
+      'Implemented real-time notifications using the Firebase Cloud Messaging.'
     ],
     techStack: [
-      
+      'Next.js',
+      'Nest.js',
+      'Prisma',
+      'PostgreSQL',
+      'Redis',
+      'AWS',
+      'Docker',
+      'CI/CD',
+      'Firebase',
+      'Razorpay',
+      'Google Cloud Vision API',
+      'XLSX',
+      'Firebase Cloud Messaging',
     ],
     images: [
-      { url: '/projects/cynos-2.webp', alt: 'CRM Dashboard' },
-      { url: '/projects/cynos-1.webp', alt: 'Analytics View' },
-      { url: '/projects/cynos-3.webp', alt: 'Analytics View' },
+      { url: '/projects/upsc-0.webp', alt: 'CRM Dashboard' },
+      { url: '/projects/upsc-1.webp', alt: 'Analytics View' },
+      { url: '/projects/upsc-2.webp', alt: 'Analytics View' },
     ],
-    githubLink: 'https://github.com/awesome-pro/cynos',
-    previewLink: 'https://cynosnexus.com',
+    githubLink: 'https://github.com/awesome-pro/upscprep-next-frontend',
+    previewLink: 'https://upscprep.abhinandan.pro',
     highlights: ['99.9% Uptime', '50ms Average Response Time', '10k+ Daily Active Users'],
-    isPrivate: true,
+  },
+  {
+    title: 'EasyMarketplace - The Simplified AWS Marketplace',
+    type: 'fullstack',
+    description: [
+      'Developed a comprehensive AWS Marketplace using Next.js 15, Nest.js 11, Prisma, PostgreSQL, Redis, AWS.',
+      'Automated deployment infrastructure using Docker, GitHub Actions for CICD, and Nginx for reverse proxy/load balancing',
+      'Implemented real-time notifications using the Firebase Cloud Messaging.'
+
+    ],
+    techStack: [
+      'Next.js',
+      'Nest.js',
+      'Prisma',
+      'PostgreSQL',
+      'Redis',
+      'AWS',
+      'Docker',
+      'CI/CD',
+      'Firebase',
+      'Razorpay',
+      'Google Cloud Vision API',
+      'XLSX',
+      'Firebase Cloud Messaging',
+    ],
+    images: [
+      { url: '/projects/easy-2.webp', alt: 'CRM Dashboard' },
+      { url: '/projects/easy-1.webp', alt: 'Analytics View' },
+      { url: '/projects/easy-0.webp', alt: 'Analytics View' },
+    ],
+    githubLink: 'https://github.com/awesome-pro/easy-marketplace-frontend',
+    previewLink: 'https://easymarketplace.abhinandan.pro',
+    highlights: ['99.9% Uptime', '50ms Average Response Time', '10k+ Daily Active Users'],
   },
   {
     title: 'myproposal.love - The AI Proposal Generator',
@@ -146,6 +193,39 @@ const projects: Project[] = [
       'DELETE /api/products/:id',
     ],
     highlights: ['5000 req/s', '99.99% Uptime', 'OAuth 2.0 Support'],
+  },
+
+  {
+    title: 'SuperFastAPI - Ship fast with FastAPI',
+    type: 'fullstack',
+    description: [
+      'Developed a FastAPI framework for FastAPI to ship fast with FastAPI',
+      'Implemented SQLAlchemy for database operations, ensuring 99.9% uptime with Error-handling mechanisms',
+      'Utitlized Celery for background tasks, ensuring 99.9% uptime with Error-handling mechanisms',
+      'Setup CICD pipeline using GitHub Actions & Docker for containerization'
+      
+    ],
+    techStack: [
+      'Next.js',
+      'Nest.js',
+      'Prisma',
+      'PostgreSQL',
+      'Redis',
+      'AWS',
+      'Docker',
+      'CI/CD',
+      'Firebase',
+      'Razorpay',
+      'Google Cloud Vision API',
+      'XLSX',
+      'Firebase Cloud Messaging',
+    ],
+    images: [
+      { url: '/projects/super-0.webp', alt: 'SuperFastAPI Dashboard' },
+    ],
+    githubLink: 'https://github.com/awesome-pro/superfastapi-frontend',
+    previewLink: 'https://superfastapi.abhinandan.pro',
+    highlights: ['99.9% Uptime', '50ms Average Response Time', '10k+ Daily Active Users'],
   },
 ];
 

@@ -23,12 +23,34 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     position: 'Software Engineer',
+    company: 'Novostack',
+    period: 'June 2025 - Present',
+    location: 'Noida, India',
+    description: [
+      'Collaborated with cross-functional teams to build the HelloTrade platform, a B2B e-commerce platform for credit score by IndiaMART',
+      'Engineered high-performance PDF converter using Puppter.js achieving 20% increase in processing speed.',
+      'Innovated comprehensive Analytic Dashboard for tracking user behavior and performance metrics.',
+      'Containerized application using Docker for consistent deployment across environments.',
+    ],
+    skills: [
+      'Next.js',
+      'Nest.js',
+      'React',
+      'TypeScript',
+      'PostgreSQL',
+      'Shadcn UI',
+      'Puppeteer',
+      'Redis',
+    ],
+    images: ['/caresept.png'],
+  },
+  {
+    position: 'Software Engineer',
     company: 'Cynos Nexus',
-    period: 'Jan 2025 - Present',
+    period: 'Jan 2025 - April 2025',
     location: 'Noida, India',
     description: [
       'Developed core features of an AI-powered real estate ecosystem using Next.js 15, Nest.js 11, Prisma, PostgreSQL, Apollo GraphQL, Redis, Google Cloud & AWS.',
-      'Collaborated with a 3-person team to secure 10 clients in just 2 months, leading to ₹25000 MRR.',
       'Implemented the AI knowledge base service, using FastAPI, Pinecone, Langchain, Hugging Face & DeepSeek AI.',
       'Implemented Incremental Site Regeneration with on-demand rendering & dynamic caching, achieving 221ms load time.',
       'Automated deployment infrastructure using Docker, GitHub Actions for CICD, and Nginx for reverse proxy/load balancing',
@@ -299,7 +321,7 @@ const TimelineItem: React.FC<{
                     'Revolutionized',
                     'Innovated',
                     'Championed',
-                    'Led',
+                   
                     'Orchestrated',
                     'Developed',
                     'Designed',
