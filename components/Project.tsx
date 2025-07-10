@@ -190,7 +190,8 @@ const projects: Project[] = [
       'CI/CD',
     ],
     images: [
-      { url: '/projects/sketch-0.webp', alt: 'Image to Sketch Converter' },
+      { url: '/projects/image-1.webp', alt: 'Image to Sketch Converter' },
+      { url: '/projects/image-2.webp', alt: 'Image to Sketch Converter' },
     ],
     githubLink: 'https://github.com/awesome-pro/imagetosketch-frontend',
     previewLink: 'https://imagetosketch.abhinandan.pro',

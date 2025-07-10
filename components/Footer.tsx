@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaCheckCircle } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaCheckCircle, FaYoutube } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -68,17 +68,14 @@ const Footer = () => {
     },
     {
       name: 'Email',
-      href: 'mailto:abhinadnanverma551@gmail.com',
+      href: 'mailto:abhinadnan@abhinandan.pro',
       icon: <FaEnvelope className="w-5 h-5 text-primary" />,
     },
-  ];
-
-  const quickLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+    {
+      name: 'YouTube',
+      href: 'https://youtube.com/@abhi_is_building',
+      icon: <FaYoutube className="w-5 h-5 text-primary" />,
+    },
   ];
 
   return (
