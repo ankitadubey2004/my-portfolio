@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/header';
 import { ThemeProvider } from '@/components/theme-provider';
 import StructuredData from './structured-data';
-import Script from 'next/script';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     template: '%s | Abhinandan - Enterpreneur & Tech Expert',
   },
   description:
-    'Enterpreneur & Tech Expert specializing in Next.js, FastAPI, Kubernetes, and Cloud Infrastructure. Expert in building scalable enterprise applications, CRM systems, and high-performance web solutions. Available for technical consulting and enterprise projects.',
+    'Enterpreneur & ML Engineer specializing in Next.js, FastAPI, Kubernetes, and Cloud Infrastructure. Expert in building scalable enterprise applications, CRM systems, and high-performance web solutions. Available for technical consulting and enterprise projects.',
   keywords: [
     'Enterpreneur',
-    'Tech Expert',
+    'ML Engineer',
     'Senior Software Engineer',
     'Full Stack Developer',
     'Next.js Expert',
@@ -85,21 +85,21 @@ export const metadata: Metadata = {
         url: 'https://abhinandan.pro/1200x630.png',
         width: 1200,
         height: 630,
-        alt: 'Abhinandan - Niche Expert Engineer & Tech Expert',
+        alt: 'Abhinandan - Enterpreneur & ML Engineer',
         type: 'image/png',
       },
       {
         url: 'https://abhinandan.pro/1080.png',
         width: 1080,
         height: 1080,
-        alt: 'Abhinandan - Niche Expert Engineer & Tech Expert',
+        alt: 'Abhinandan - Enterpreneur & ML Engineer',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Abhinandan - Niche Expert Engineer & Tech Expert',
+    title: 'Abhinandan - Enterpreneur & ML Engineer',
     description:
       'Expert Full Stack Engineer specializing in Next.js, FastAPI, and enterprise solutions. Available for technical consulting and enterprise projects.',
     creator: '@awesome_v0',
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
         url: 'https://abhinandan.pro/1200x630.png',
         width: 1200,
         height: 630,
-        alt: 'Abhinandan - Niche Expert Engineer & Tech Expert',
+        alt: 'Abhinandan - Enterpreneur & ML Engineer',
         type: 'image/png',
       },
     ],
@@ -137,18 +137,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-      <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-F68MYYBRLW`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-F68MYYBRLW');
-          `}
-        </Script>
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -158,6 +146,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StructuredData />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <GoogleAnalytics />
+        
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
