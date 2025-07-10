@@ -21,10 +21,10 @@ const StyledButton = ({ children, className, ...props }: any) => (
 
 const Hero = () => {
   const { theme } = useTheme();
-  const [profileImage, setProfileImage] = useState('/p-11.jpg');
+  const [profileImage, setProfileImage] = useState('/p-7.jpg');
 
   useEffect(() => {
-    setProfileImage(theme === 'dark' ? '/p-11.jpg' : '/p-11.jpg');
+    setProfileImage(theme === 'dark' ? '/p-7.jpg' : '/p-7.jpg');
   }, [theme]);
 
   return (
