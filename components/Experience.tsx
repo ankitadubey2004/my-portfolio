@@ -21,33 +21,33 @@ interface ExperienceItem {
 }
 
 const experiences: ExperienceItem[] = [
-  {
-    position: 'Software Engineer',
-    company: 'Novostack',
-    period: 'June 2025 - Present',
-    location: 'Noida, India',
-    description: [
-      'Collaborated with cross-functional teams to build the HelloTrade platform, a B2B e-commerce platform for credit score by IndiaMART',
-      'Engineered high-performance PDF converter using Puppter.js achieving 20% increase in processing speed.',
-      'Innovated comprehensive Analytic Dashboard for tracking user behavior and performance metrics.',
-      'Containerized application using Docker for consistent deployment across environments.',
-    ],
-    skills: [
-      'Next.js',
-      'Nest.js',
-      'React',
-      'TypeScript',
-      'PostgreSQL',
-      'Shadcn UI',
-      'Puppeteer',
-      'Redis',
-    ],
-    images: ['/caresept.png'],
-  },
+  // {
+  //   position: 'Software Engineer',
+  //   company: 'Novostack',
+  //   period: 'June 2025 - Present',
+  //   location: 'Noida, India',
+  //   description: [
+  //     'Collaborated with cross-functional teams to build the HelloTrade platform, a B2B e-commerce platform for credit score by IndiaMART',
+  //     'Engineered high-performance PDF converter using Puppter.js achieving 20% increase in processing speed.',
+  //     'Innovated comprehensive Analytic Dashboard for tracking user behavior and performance metrics.',
+  //     'Containerized application using Docker for consistent deployment across environments.',
+  //   ],
+  //   skills: [
+  //     'Next.js',
+  //     'Nest.js',
+  //     'React',
+  //     'TypeScript',
+  //     'PostgreSQL',
+  //     'Shadcn UI',
+  //     'Puppeteer',
+  //     'Redis',
+  //   ],
+  //   images: ['/caresept.png'],
+  // },
   {
     position: 'Software Engineer',
     company: 'Cynos Nexus',
-    period: 'Jan 2025 - April 2025',
+    period: 'Jan 2025 - May 2025',
     location: 'Noida, India',
     description: [
       'Developed core features of an AI-powered real estate ecosystem using Next.js 15, Nest.js 11, Prisma, PostgreSQL, Apollo GraphQL, Redis, Google Cloud & AWS.',
