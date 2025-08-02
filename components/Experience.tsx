@@ -51,11 +51,11 @@ const experiences: ExperienceItem[] = [
   location: 'Remote',
   description: [
     'Collaborated with frontend & backend teams on live enterprise-level applications.',
-    'Contributed to UI/UX improvements, reducing user drop-off by <span class="font-bold text-blue-600 dark:text-blue-400">40%</span>.',
-    'Integrated <span class="font-medium text-emerald-600 dark:text-emerald-400">RESTful APIs</span> and implemented <span class="font-medium text-emerald-600 dark:text-emerald-400">JWT authentication</span> in <span class="font-medium text-emerald-600 dark:text-emerald-400">MERN stack</span> apps.',
+    'Contributed to UI/UX improvements, reducing user drop-off by .',
+    'Integrated RESTful APIs and implemented JWT authentication in MERN stack apps.',
     'Worked on the official Novexus website and its internship page.',
-    'Developed <span class="font-medium text-emerald-600 dark:text-emerald-400">QuickCart</span> – a one-swipe shopping solution.',
-    'Built <span class="font-medium text-emerald-600 dark:text-emerald-400">Nutrinext</span> – a dynamic food delivery platform.',
+    'Developed QuickCart – a one-swipe shopping solution.',
+    'BuiltNutrinext– a dynamic food delivery platform.',
   ],
   skills: [
     'React',
@@ -78,9 +78,9 @@ const experiences: ExperienceItem[] = [
   period: 'July 2024 - August 2024',
   location: 'Remote',
   description: [
-    'Built a responsive <span class="font-medium text-emerald-600 dark:text-emerald-400">login & registration</span> system using HTML, CSS, and JavaScript.',
-    'Improved UI/UX across pages, enhancing task completion speed by ~<span class="font-bold text-blue-600 dark:text-blue-400">30%</span>.',
-    'Developed a full-featured <span class="font-medium text-emerald-600 dark:text-emerald-400">To-Do List</span> app with data persistence and user-specific tasks.',
+    'Built a responsive login & registration system using HTML, CSS, and JavaScript.',
+    'Improved UI/UX across pages, enhancing task completion speed by ~30%.',
+    'Developed a full-featured To-Do List app with data persistence and user-specific tasks.',
   ],
   skills: [
     'HTML',
@@ -99,9 +99,9 @@ const experiences: ExperienceItem[] = [
   period: 'June 2024 - July 2024',
   location: 'Remote',
   description: [
-    'Developed Java applications using <span class="font-medium text-emerald-600 dark:text-emerald-400">OOP principles</span>.',
+    'Developed Java applications using OOP principles.',
     'Improved exception handling and modularity through real-world project tasks.',
-    'Simulated banking operations in an <span class="font-medium text-emerald-600 dark:text-emerald-400">ATM CLI project</span>, handling <span class="font-bold text-blue-600 dark:text-blue-400">20+</span> test transactions.',
+    'Simulated banking operations in an 20+ test transactions.',
   ],
   skills: [
     'Java',
